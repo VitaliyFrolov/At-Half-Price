@@ -1,0 +1,9 @@
+@import '~normalize.css';
+
+html *, html ::after, html ::before {
+    box-sizing: border-box;
+}
+
+.body {
+    width: 100%;
+}

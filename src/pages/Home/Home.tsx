@@ -1,10 +1,11 @@
 import React from 'react';
-import { DiscountStores } from './components/DiscountStores/DiscountStores';
+import { TopStores } from './components/TopStores/TopStores';
+
 
 export const Home = () => {
     return (
         <>
-            <DiscountStores />
+            <TopStores />
         </>
     )
 }

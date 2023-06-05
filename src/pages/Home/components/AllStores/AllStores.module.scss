@@ -1,0 +1,32 @@
+.wrapper { 
+    max-width: 1120px;
+    padding-bottom: 31px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.btnWrapper {
+    max-width: 1120px;
+    height: 96px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardWrapper {
+    padding-top: 64px;
+    padding-bottom: 44px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    row-gap: 16px;
+    column-gap: 22px;
+}

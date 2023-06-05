@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-    id: string
+    id: string,
 }
 
 export const SvgTools = ({ id }: Props) => {
@@ -25,4 +25,4 @@ export const SvgTools = ({ id }: Props) => {
         default:
             return null;
     }   
-}
+};

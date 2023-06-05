@@ -1,11 +1,11 @@
 import React from 'react';
-import { TopStores } from './components/TopStores/TopStores';
+import { AllStores } from './components/AllStores/AllStores';
 
 
 export const Home = () => {
     return (
         <>
-            <TopStores />
+            <AllStores />
         </>
     )
-}
+};

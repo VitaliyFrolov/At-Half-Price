@@ -1,10 +1,38 @@
 .container {
-    width: 268px;
-    height: 336px;
+    width: 266px;
+    height: 334px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.image {
+    width: 266px;
+    height: 266px;
+    background: rgba(196, 196, 196, 1);
+    border: 1px solid rgba(196, 196, 196, 1);
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    background-color: antiquewhite;
+.content {
+    padding-left: 16px;
+    padding-top: 14px;
+}
+
+.discount {
+    padding: 0;
+    padding-bottom: 2px;
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.name {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(149, 149, 149, 1);
 }

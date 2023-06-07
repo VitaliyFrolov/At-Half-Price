@@ -1,0 +1,20 @@
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 272px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    margin-bottom: 76px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 16px;
+    column-gap: 22px;
+}

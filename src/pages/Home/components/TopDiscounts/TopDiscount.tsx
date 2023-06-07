@@ -13,18 +13,18 @@ export const TopDiscount = () => {
                 Самые выгодные скидки сейчас
             </h2>
             <div className={style.content}>
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard />
-               <TopDiscountCard /> 
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} />
+               <TopDiscountCard price={17} sale={25} product={'продукт'} shop={'магазин'} /> 
             </div>
         </section>
     )

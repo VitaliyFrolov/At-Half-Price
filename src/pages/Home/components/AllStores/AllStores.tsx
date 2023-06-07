@@ -32,7 +32,6 @@ export const AllStores = () => {
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 7' />
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 8' />
             </div>
-            <PageBtn text='Смотреть все' />
         </section>
     )
 };

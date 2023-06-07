@@ -27,7 +27,13 @@ export const SvgTools = ({ id }: Props) => {
                 <svg width="12" height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M0.371428 16.7833L2.57143 19L12 9.5L2.57143 0L0.371428 2.21667L7.6 9.5L0.371428 16.7833Z" fill="#878787"/>
                 </svg>
-            )    
+            );
+        case 'NextBtn':
+            return (
+                <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M0.657143 9.71667L1.85714 11L7 5.5L1.85714 0L0.657143 1.28333L4.6 5.5L0.657143 9.71667Z" fill="#878787"/>
+                </svg>
+            );    
         default:
             return null;
     }   

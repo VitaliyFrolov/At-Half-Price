@@ -26,7 +26,7 @@ export const Header = (props: Props) => {
                                 <p className={style.header__itemText}>Купоны</p>
                             </li>
                             <li className={style.header__item}>
-                                <p className={style.header__itemText}>Магазины </p>
+                                <a href="/shops" className={style.header__itemText}>Магазины </a>
                             </li>
                         </ul>
                     </div>

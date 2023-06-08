@@ -11,7 +11,7 @@ interface Props {
 const discountCalc = (price: number, discount: number) => {
     const percent = price * discount / 100;
     const sale = price - percent;
-    return sale
+    return sale;
 };
 
 
@@ -20,6 +20,13 @@ export const TopDiscountCard = ({price, product, shop, discount}: Props) => {
         <div className={style.container}>
             <div className={style.img}>
                 <img src="/img/BannerTestImg.png" width={31} height={18} alt='sale' />
+                <div className={style.saleBar}>
+                    <span>
+                        <p className={style.saleBarText}>
+                            -{discount}%
+                        </p>
+                    </span>
+                </div>
             </div>
             <div className={style.content}>
                 <div className={style.priceContainer}>

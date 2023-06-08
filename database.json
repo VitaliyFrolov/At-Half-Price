@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 10,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    }
+  ],
+  "comments": [
+    {
+      
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

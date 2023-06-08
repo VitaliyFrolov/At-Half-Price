@@ -3,12 +3,19 @@ import style from './TopDiscountCard.module.scss';
 
 interface Props {
     price: number
-    sale: number
     product: string
     shop: string
+    discount: number
 }
 
-export const TopDiscountCard = ({price, sale, product, shop}: Props) => {
+const discountCalc = (price: number, discount: number) => {
+    const percent = price * discount / 100;
+    const sale = price - percent;
+    return sale
+};
+
+
+export const TopDiscountCard = ({price, product, shop, discount}: Props) => {
     return (
         <div className={style.container}>
             <div className={style.img}>
@@ -18,7 +25,7 @@ export const TopDiscountCard = ({price, sale, product, shop}: Props) => {
                 <div className={style.priceContainer}>
                     <div className={style.price}>
                         <span className={style.priceNum}>
-                            {price}
+                            {discountCalc(price, discount)}
                         </span>
                         <span className={style.priceСurrency}>
                             NIS
@@ -27,7 +34,7 @@ export const TopDiscountCard = ({price, sale, product, shop}: Props) => {
                     <div className={style.sale}>
                         <span className={style.saleNum}>
                             <s>
-                                {sale}
+                                {price}
                             </s>
                         </span>
                         <span className={style.saleCurrency}>

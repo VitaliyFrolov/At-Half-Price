@@ -7,6 +7,7 @@ interface Item {
     product: string;
     shop: string;
     discount?: number;
+    id: number;
 }
 
 interface Props {
@@ -26,6 +27,7 @@ export const TopDiscount = ({items}: Props) => {
                         product={item.product}
                         shop={item.shop}
                         discount={item.discount}
+                        key={item.id}
                     />
                 ))}
             </div>

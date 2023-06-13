@@ -1,6 +1,5 @@
 import React from 'react';
-import { PageBtn } from '../../../../shared/PageBtn/PageBtn';
-import { AllStoresBtn } from '../AllStoresBtn/AllStoresBtn.module';
+// import { AllStoresBtn } from '../AllStoresBtn/AllStoresBtn.module';
 import { AllStoresCard } from '../AllStoresCard/AllStoresCard';
 import style from './AllStores.module.scss';
 
@@ -12,7 +11,7 @@ export const AllStores = () => {
                     Магазины со скидками в Тель-Авиве
                 </h2>
             </div>
-            <div className={style.btnWrapper}>
+            {/* <div className={style.btnWrapper}>
                 <AllStoresBtn title='Все магазины' />
                 <AllStoresBtn title='Супермаркеты ' />
                 <AllStoresBtn title='Магазины Электронники' />
@@ -21,7 +20,7 @@ export const AllStores = () => {
                 <AllStoresBtn title='Алкогольные магазины' />
                 <AllStoresBtn title='Товары для дома' />
                 <AllStoresBtn title='Зоотовары' />
-            </div>
+            </div> */}
             <div className={style.cardWrapper}>
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 1' />
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 2' />
@@ -31,6 +30,7 @@ export const AllStores = () => {
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 6' />
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 7' />
                 <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 8' />
+                
             </div>
         </section>
     )

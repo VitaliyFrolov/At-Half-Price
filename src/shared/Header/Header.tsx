@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Header.module.scss"
 import { SvgTools } from "../../svgTools/SvgTools";
+import { Link } from "react-router-dom";
 
 
 interface Props {}
@@ -26,7 +27,7 @@ export const Header = (props: Props) => {
                                 <p className={style.header__itemText}>Купоны</p>
                             </li>
                             <li className={style.header__item}>
-                                <a href="/shops" className={style.header__itemText}>Магазины </a>
+                                <Link to={'/shops'} className={style.header__itemText}>Магазины </Link>
                             </li>
                         </ul>
                     </div>

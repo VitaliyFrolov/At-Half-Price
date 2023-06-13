@@ -3,7 +3,28 @@ import React from 'react';
 import { AllStoresCard } from '../AllStoresCard/AllStoresCard';
 import style from './AllStores.module.scss';
 
-export const AllStores = () => {
+interface Item {
+    discount: number;
+    name: string;
+    imgUrl: string;
+    id: number;
+}
+
+interface Props {
+    items: Item[]
+}
+
+export const AllStores = ({items}: Props) => {
+    const sortedShares = [...items].sort((a, b) => {
+        if (a.discount && b.discount) {
+            return b.discount - a.discount;
+        } else if (a.discount) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    
     return (
         <section className={style.wrapper}>
             <div>
@@ -22,15 +43,14 @@ export const AllStores = () => {
                 <AllStoresBtn title='Зоотовары' />
             </div> */}
             <div className={style.cardWrapper}>
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 1' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 2' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 3' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 4' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 5' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 6' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 7' />
-                <AllStoresCard imgUrl='../img/BannerTestImg.png' discount='2396 Акций' name='Магазин 8' />
-                
+                {sortedShares.map((item: Item) => (
+                    <AllStoresCard
+                        discount={item.discount}
+                        name={item.name}
+                        imgUrl={item.imgUrl}
+                        key={item.id}
+                    />
+                ))}
             </div>
         </section>
     )

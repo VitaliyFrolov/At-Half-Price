@@ -6,13 +6,15 @@ import { Link } from 'react-router-dom';
 
 interface Props {
     discountCard: never[];
-
+    storesCard: never[];
 }
 
-export const Home = ({discountCard}: Props) => {
+export const Home = ({discountCard, storesCard}: Props) => {
     return (
         <>
-            <AllStores />
+            <AllStores
+                items={storesCard}
+            />
             <Link className='linkTo' to={'/shops'}>
                 <PageBtn
                     text='Смотреть все'

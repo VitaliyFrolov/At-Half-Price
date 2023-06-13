@@ -2,7 +2,7 @@ import React from "react";
 import style from './AllStoresCard.module.scss';
 
 interface Props {
-    discount: string
+    discount: number
     name: string
     imgUrl: string
 }

@@ -4,7 +4,7 @@
       "price": 14,
       "product": "продукт",
       "shop": "магазин",
-      "discount": 15,
+      "discount": 15,  
       "id": 1
     },
     {
@@ -84,9 +84,51 @@
   ],
   "comments": [
     {
-      "discount": 23,
+      "discount": 2323,
       "name": "магазин",
-      "imgUrl": "'/img/BannerTestImg.png'"
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 1
+    },
+    {
+      "discount": 2312,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 2
+    },
+    {
+      "discount": 2333,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 3
+    },
+    {
+      "discount": 2311,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 4
+    },
+    {
+      "discount": 2342,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 5
+    },
+    {
+      "discount": 2324,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 6
+    }, {
+      "discount": 2388,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 7
+    },
+    {
+      "discount": 2335,
+      "name": "магазин",
+      "imgUrl": "/img/BannerTestImg.png",
+      "id": 8
     }
   ],
   "profile": {

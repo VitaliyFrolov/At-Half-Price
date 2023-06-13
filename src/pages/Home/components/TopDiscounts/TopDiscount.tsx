@@ -15,7 +15,7 @@ interface Props {
 }
 
 export const TopDiscount = ({items}: Props) => {
-    const sortedItems = [...items].sort((a, b) => {
+    const sortedSale = [...items].sort((a, b) => {
         if (a.discount && b.discount) {
             return b.discount - a.discount;
         } else if (a.discount) {
@@ -31,7 +31,7 @@ export const TopDiscount = ({items}: Props) => {
                 Самые выгодные скидки сейчас
             </h2>
             <div className={style.content}>
-                {sortedItems.map((item: Item) => (
+                {sortedSale.map((item: Item) => (
                     <TopDiscountCard 
                         price={item.price}
                         product={item.product}

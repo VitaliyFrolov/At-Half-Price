@@ -10,10 +10,13 @@ import './styles/index.scss';
 
 function App() {
   const [discountCard, setDiscountCard] = useState([]);
+  const [storesCard, setStoresCard] = useState([]);
 
   useEffect(() => {
       axios.get('http://localhost:3001/posts')
-          .then((res) => setDiscountCard(res.data));
+        .then((res) => setDiscountCard(res.data));
+      axios.get('http://localhost:3001/comments')
+        .then((res) => setStoresCard(res.data));
   }, []);
 
   return (
@@ -26,12 +29,17 @@ function App() {
           Component={()=>
             <Home
               discountCard={discountCard}
+              storesCard={storesCard}
             />
           }
         /> 
         <Route
           path='/shops'
-          Component={Shops}
+          Component={()=>
+            <Shops
+              storesCard={storesCard}
+            />
+          }
         />
       </Routes>
       <Footer />   

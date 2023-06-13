@@ -3,10 +3,16 @@ import { PageBtn } from "../../shared/PageBtn/PageBtn";
 // import { SliderNav } from "../../shared/SliderNav/SliderNav";
 import { AllStores } from "../Home/components/AllStores/AllStores";
 
-export const Shops = () => {
+interface Props {
+    storesCard: never[]
+}
+
+export const Shops = ({storesCard}: Props) => {
     return (
         <section>
-            <AllStores />
+            <AllStores
+                items={storesCard}
+            />
             {/* <SliderNav /> */}
             <PageBtn 
                 text="Показать еще"

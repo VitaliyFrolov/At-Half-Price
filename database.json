@@ -1,10 +1,62 @@
 {
   "posts": [
     {
+      "price": 14,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 15
+    },
+    {
       "price": 10,
       "product": "продукт",
       "shop": "магазин",
+      "discount": 5
+    },
+    {
+      "price": 30,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 15
+    },
+    {
+      "price": 44,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 15
+    },
+    {
+      "price": 44,
+      "product": "продукт",
+      "shop": "магазин",
       "discount": 10
+    },
+    {
+      "price": 24,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 15
+    },
+    {
+      "price": 50,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 15
+    },
+    {
+      "price": 20,
+      "product": "продукт",
+      "shop": "магазин",
+      "discount": 10
+    },
+    {
+      "price": 33,
+      "product": "продукт",
+      "shop": "магазин"
+    },
+    {
+      "price": 99,
+      "product": "продукт",
+      "shop": "магазин"
     },
     {
       "price": 10,
@@ -13,64 +65,9 @@
       "discount": 10
     },
     {
-      "price": 10,
+      "price": 15,
       "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
-    },
-    {
-      "price": 10,
-      "product": "продукт",
-      "shop": "магазин",
-      "discount": 10
+      "shop": "магазин"
     }
   ],
   "comments": [

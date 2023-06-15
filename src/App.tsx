@@ -11,6 +11,7 @@ import './styles/index.scss';
 function App() {
   const [discountCard, setDiscountCard] = useState([]);
   const [storesCard, setStoresCard] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
       axios.get('http://localhost:3001/posts')
@@ -18,6 +19,12 @@ function App() {
       axios.get('http://localhost:3001/comments')
         .then((res) => setStoresCard(res.data));
   }, []);
+
+  const onChangeSearchInput = (event: any) => {
+    setSearchValue(event.target.value);
+  };
+
+  console.log(searchValue);
 
   return (
     <div className="app-container">
@@ -30,6 +37,8 @@ function App() {
             <Home
               discountCard={discountCard}
               storesCard={storesCard}
+              searchInput={onChangeSearchInput}
+              searchValue={searchValue}
             />
           }
         /> 
@@ -38,6 +47,8 @@ function App() {
           Component={()=>
             <Shops
               storesCard={storesCard}
+              searchInput={onChangeSearchInput}
+              searchValue={searchValue}
             />
           }
         />

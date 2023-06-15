@@ -16,7 +16,7 @@ export const AllStoresCard = ({discount, name, imgUrl}: Props) => {
             <div className={style.contentContainer}>
                 <div className={style.content}>
                     <h3 className={style.discount}>
-                        {discount}
+                        {discount} Акций
                     </h3>
                     <p className={style.name}>
                         {name}

@@ -85,7 +85,7 @@
   "comments": [
     {
       "discount": 2323,
-      "name": "магазин",
+      "name": "7шагофф",
       "imgUrl": "/img/BannerTestImg.png",
       "id": 1
     },
@@ -103,7 +103,7 @@
     },
     {
       "discount": 2311,
-      "name": "магазин",
+      "name": "верный",
       "imgUrl": "/img/BannerTestImg.png",
       "id": 4
     },
@@ -120,13 +120,13 @@
       "id": 6
     }, {
       "discount": 2388,
-      "name": "магазин",
+      "name": "магнит",
       "imgUrl": "/img/BannerTestImg.png",
       "id": 7
     },
     {
       "discount": 2335,
-      "name": "магазин",
+      "name": "пятерочка",
       "imgUrl": "/img/BannerTestImg.png",
       "id": 8
     }

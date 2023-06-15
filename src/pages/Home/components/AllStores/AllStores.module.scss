@@ -5,9 +5,52 @@
     margin-top: 60px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
 .title {
     font-size: 30px;
     font-weight: 500;
+}
+
+.search {
+    width: 595px;
+    height: 34px;
+    border: 1px solid rgba(212, 212, 212, 1);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+
+    &Icn {
+        padding-left: 10.5px;
+        padding-right: 14px;
+        padding-top: 5px;
+    }
+
+    &Field {
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+    &Btn {
+        background-color: rgba(217, 217, 217, 1);
+        border: none;
+        height: 100%;
+        padding: 10px 20px 10px 28px;
+        cursor: pointer;
+
+        &Text {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
 }
 
 .btnWrapper {

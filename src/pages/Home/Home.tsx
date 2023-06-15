@@ -7,13 +7,19 @@ import { Link } from 'react-router-dom';
 interface Props {
     discountCard: never[];
     storesCard: never[];
+    searchInput: any;
+    searchValue: any;
 }
 
-export const Home = ({discountCard, storesCard}: Props) => {
+export const Home = ({discountCard, storesCard, searchInput, searchValue}: Props) => {
     return (
         <>
             <AllStores
                 items={storesCard}
+                title="Магазины со скидками в Тель-Авиве"
+                search={false}
+                searchInput={searchInput}
+                searchValue={searchValue}
             />
             <Link className='linkTo' to={'/shops'}>
                 <PageBtn

@@ -1,7 +1,7 @@
 import React from 'react';
-// import { AllStoresBtn } from '../AllStoresBtn/AllStoresBtn.module';
 import { AllStoresCard } from '../AllStoresCard/AllStoresCard';
 import { SvgTools } from '../../../../svgTools/SvgTools';
+import { ProductFilter } from '../../../../shared/ProductFilter/ProductFilter';
 import style from './AllStores.module.scss';
 
 interface Item {
@@ -18,9 +18,10 @@ interface Props {
     placeholder?: string;
     searchInput: any;
     searchValue: any;
+    filter?: boolean;
 }
 
-export const AllStores = ({items, title, search, placeholder, searchInput, searchValue}: Props) => {
+export const AllStores = ({items, title, search, placeholder, searchInput, searchValue, filter}: Props) => {
     const sortedShares = [...items].sort((a, b) => {
         if (a.discount && b.discount) {
             return b.discount - a.discount;
@@ -50,24 +51,18 @@ export const AllStores = ({items, title, search, placeholder, searchInput, searc
                             autoFocus={true}
                             onChange={searchInput}
                          />
-                        <button className={style.searchBtn}>
+                        {/* <button className={style.searchBtn}>
                             <p
                                 className={style.searchBtnText}
                             >Найти</p>
-                        </button>
+                        </button> */}
                     </form> : null
                 }
             </div>
-            {/* <div className={style.btnWrapper}>
-                <AllStoresBtn title='Все магазины' />
-                <AllStoresBtn title='Супермаркеты ' />
-                <AllStoresBtn title='Магазины Электронники' />
-                <AllStoresBtn title='Детские магазины' />
-                <AllStoresBtn title='Косметика' />
-                <AllStoresBtn title='Алкогольные магазины' />
-                <AllStoresBtn title='Товары для дома' />
-                <AllStoresBtn title='Зоотовары' />
-            </div> */}
+            {filter 
+                ? <ProductFilter />
+                : null
+            }
             {placeholder ?
                 <div className={style.cardWrapper}>
                     {sortedShares.filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase())).map((item: Item) => (

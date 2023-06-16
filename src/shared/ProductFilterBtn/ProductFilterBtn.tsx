@@ -1,11 +1,11 @@
 import React from "react";
-import style from './AllStoresBtn.module.scss';
+import style from './ProductFilterBtn.module.scss';
 
 interface Props {
     title: string
 };
 
-export const AllStoresBtn = ({title}: Props) =>  {
+export const ProductFilterBtn = ({title}: Props) => {
     return (
         <div className={style.container}>
             <h2 className={style.title}>

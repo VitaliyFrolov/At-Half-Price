@@ -19,8 +19,8 @@ export const Shops = ({storesCard, searchInput, searchValue}: Props) => {
                 placeholder="Поиск магазинов"
                 searchInput={searchInput}
                 searchValue={searchValue}
+                filter={true}
             />
-            {/* <SliderNav /> */}
             <PageBtn 
                 text="Показать еще"
             />

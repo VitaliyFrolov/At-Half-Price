@@ -18,9 +18,6 @@ const calcDiscount = (price: number, discount?: number): number => {
    }
 };
 
-
-
-
 export const TopDiscountCard = ({price, product, shop, discount}: Props) => {
     return (
         <div className={style.container}>

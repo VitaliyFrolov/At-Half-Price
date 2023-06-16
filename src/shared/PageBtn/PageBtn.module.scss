@@ -16,3 +16,12 @@
     font-size: 12px;
     font-weight: 400;
 }
+
+.linkTo {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
+}

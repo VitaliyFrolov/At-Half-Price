@@ -46,12 +46,14 @@ export const AllStores = ({items, title, search, placeholder, searchInput, searc
                             className={style.searchField}
                             type='text'
                             placeholder={placeholder}
-                            onChange={searchInput}
                             value={searchValue}
-                            autoFocus={true} 
+                            autoFocus={true}
+                            onChange={searchInput}
                          />
                         <button className={style.searchBtn}>
-                            <p className={style.searchBtnText}>Найти</p>
+                            <p
+                                className={style.searchBtnText}
+                            >Найти</p>
                         </button>
                     </form> : null
                 }

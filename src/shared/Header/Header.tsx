@@ -9,42 +9,49 @@ interface Props {}
 export const Header = (props: Props) => {
     return (
         <div className={style.shadow}>
-            <div className={style.header__wrapper}>
-                <header className={style.header}>
-                    <div className={style.header__leftContainer}>
-                        <div className={style.header__logo}>
-                            <SvgTools id="logo"/>
+            <div className={style.wrapper}>
+                <div className={style.container}>
+                    <div className={style.leftWrapper}>
+                        <div className={style.logo}>
+                            <SvgTools id="logo" />
                         </div>
-                        <ul className={style.header__menu}>
-                            <li className={style.header__item}>
-                                <SvgTools id='location' />
-                                <p className={style.header__itemText}>Тель Авив </p>
-                            </li> 
-                            <li className={style.header__item}>
-                                <p className={style.header__itemText}>Скидки</p>
-                            </li>
-                            <li className={style.header__item}>
-                                <p className={style.header__itemText}>Купоны</p>
-                            </li>
-                            <li className={style.header__item}>
-                                <Link to={'/shops'} className={style.header__itemText}>Магазины </Link>
-                            </li>
-                        </ul>
+                        <nav>
+                            <ul className={style.list}>
+                                <li className={style.item}>
+                                    <SvgTools id="location" />
+                                    <p className={style.text}>
+                                        Тель Авив 
+                                    </p>
+                                </li>
+                                <li className={style.item}>
+                                    <p className={style.text}>
+                                        Скидки 
+                                    </p>
+                                </li>
+                                <li className={style.item}>
+                                    <p className={style.text}>
+                                        Купоны 
+                                    </p>
+                                </li>
+                                <li className={style.item}>
+                                    <Link 
+                                        className={style.link}
+                                        to={'./shops'}>
+                                        <p className={style.text}>
+                                            Магазины 
+                                        </p>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div className={style.header__rightContainer}>
-                        <div className={style.header__search}>
-                            <button className={style.header__searchBtn}>
-                                <SvgTools id="search" />
-                            </button>
-                            <input 
-                                className={style.header__searchInpt}
-                                type="text"
-                                placeholder="Поиск акций и магазинов"
-                            />
+                    <div className={style.rightWrapper}>
+                        <div className={style.input}>
+                            input
                         </div>
-                        <div className={style.header__userMenu} />
+                        <div className={style.user} />
                     </div>
-                </header>
+                </div>
             </div>
         </div>
     )

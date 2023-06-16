@@ -1,88 +1,74 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-
-    padding-top: 34px;
-    padding-bottom: 35px;
-
-    &__wrapper {
-        max-width: 1120px;
-        margin: 0 auto;
-        margin-bottom: 61px;
-    }
-
-    &__leftContainer {
-        display: flex;
-        gap: 65px;
-        flex-wrap: wrap;
-    }
-
-    &__rightContainer {
-        display: flex;
-        align-items: center;
-        gap: 93px;
-        flex-wrap: wrap;
-    }
-
-    &__menu {
-        list-style: none;
-        display: flex;
-        gap: 40px;
-        padding: 0;
-        margin: 0;
-        flex-wrap: wrap;
-    }
-
-    &__item {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    &__itemText {
-        margin: 0;
-        color: rgba(0, 0, 0, 1);
-        text-decoration: none;
-    }
-
-    &__search {
-        display: flex;
-        gap: 10.5;
-        
-        width: 480px;
-        height: 34px;
-        border: 1px solid rgba(212, 212, 212, 1);
-        border-radius: 6px;
-
-        &Btn {
-            
-            border: none;
-            background: inherit;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &Inpt {
-            border: none;
-            outline: none;
-        }
-    }
-
-    &__userMenu {
-        display: flex;
-
-        width: 38px;
-        height: 36px;
-
-        background-size: contain;
-        background-image: url(../../../public/img/Avatar.png);
-    }
-}
-
 .shadow {
     width: 100%;
+    min-height: 103px;
+    margin-bottom: 61px;
+}
+
+.wrapper {
+    min-width: 100%;
+    min-height: 103px; 
+    position: fixed;
+    background-color: white;
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.container {
+    max-width: 1120px;
+    padding-top: 26.3px;
+    padding-bottom: 26.3px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftWrapper {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.text {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.rightWrapper {
+    display: flex;
+    align-items: center;
+    gap: 93px;
+}
+
+.input {
+    color: black;
+}
+
+.user {
+    width: 38px;
+    height: 36px;
+    background-image: url(../../../public/img/Avatar.png);
+    background-position: center;
+    background-size: cover;
 }

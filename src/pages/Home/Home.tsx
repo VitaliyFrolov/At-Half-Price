@@ -21,21 +21,17 @@ export const Home = ({discountCard, storesCard, searchInput, searchValue}: Props
                 searchInput={searchInput}
                 searchValue={searchValue}
             />
-            <Link className='linkTo' to={'/shops'}>
-                <PageBtn
-                    text='Смотреть все'
-                    svgId='pageBtn'
-                />
-            </Link>
+            <PageBtn
+                text='Смотреть все'
+                svgId='pageBtn'
+            />
             <TopDiscount
                 items={discountCard}
             />
-            <Link className='linkTo' to={'/shops'}>
-                <PageBtn
-                    text='Смотреть все'
-                    svgId='pageBtn'
-                />
-            </Link>
+            <PageBtn
+                text='Смотреть все'
+                svgId='pageBtn'
+            />
         </>
     )
 };

@@ -1,59 +1,39 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home/Home';
-import { Shops } from './pages/Shops/Shops';
-import { Banner } from './shared/Banner/Banner';
-import { Footer } from './shared/Footer/Footer';
-import { Header } from './shared/Header/Header';
-import './styles/index.scss';
+import { Home } from './pages/Home/ui/Page';
+import { Shops } from './pages/Shops/ui/Shops';
+import { Banner } from './shared/ui/Banner/Banner';
+// import { Footer } from './shared/Footer/Footer';
+// import { Header } from './shared/Header/Header';
+import styles from './App.module.scss';
+
+
+
 
 function App() {
-  const [discountCard, setDiscountCard] = useState([]);
-  const [storesCard, setStoresCard] = useState([]);
   const [searchValue, setSearchValue] = useState('');
-
-  useEffect(() => {
-      axios.get('http://localhost:3001/posts')
-        .then((res) => setDiscountCard(res.data));
-      axios.get('http://localhost:3001/comments')
-        .then((res) => setStoresCard(res.data));
-  }, []);
 
   const onChangeSearchInput = (event: any) => {
     setSearchValue(event.target.value);
   };
 
-  console.log(searchValue);
-
   return (
-    <div className="app-container">
-      <Header />
-      <Banner />
-      <Routes>
-        <Route 
-          path='/'
-          Component={()=>
-            <Home
-              discountCard={discountCard}
-              storesCard={storesCard}
-              searchInput={onChangeSearchInput}
-              searchValue={searchValue}
-            />
-          }
-        /> 
-        <Route
-          path='/shops'
-          Component={()=>
-            <Shops
-              storesCard={storesCard}
-              searchInput={onChangeSearchInput}
-              searchValue={searchValue}
-            />
-          }
-        />
-      </Routes>
-      <Footer />   
+    <div className={styles.appContainer}>
+      {/* <Header /> */}
+      <div className={styles.appContent}>
+        <Banner />
+        <Routes>
+          <Route 
+            path='/'
+            element={<Home />}
+          /> 
+          {/* <Route
+            path='/shops'
+            element={<Shops /> }
+          /> */}
+        </Routes>
+      {/* <Footer />    */}
+      </div>
     </div>
   );
 };

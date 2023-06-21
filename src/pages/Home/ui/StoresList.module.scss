@@ -3,6 +3,7 @@
     padding-bottom: 31px;
     margin: 0 auto;
     margin-top: 60px;
+    position: relative;
 }
 
 .header {
@@ -63,4 +64,16 @@
 
     row-gap: 16px;
     column-gap: 22px;
+}
+
+.filterWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterPanelExpander {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
 }

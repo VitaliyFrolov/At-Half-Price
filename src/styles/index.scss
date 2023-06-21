@@ -7,6 +7,10 @@ html *, html ::after, html ::before {
     font-family: 'Roboto', sans-serif;
 }
 
+#root {
+    height: 100vh;
+}
+
 .body {
     width: 100%;
 }

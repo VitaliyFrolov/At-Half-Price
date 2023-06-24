@@ -20,8 +20,24 @@ export const Page: FC = () => {
 
     return (
         <Container>
-            <StoresList items={stores} />
-            <DiscountsList items={discounts} />    
+            <section className={styles.section}>
+                <div className={styles.listHeader}>
+                    <Title text='Магазины со скидками в Тель-Авиве' />
+                </div>
+                <StoresList items={stores} />
+                <div className={styles.btnWrapper}>
+                    <Btn text='Смотреть все' svgId='pageBtn' />
+                </div>
+            </section>
+            <section className={styles.section}>
+                <div className={styles.listHeader}>
+                    <Title text='Самые выгодные скидки сейчас' />
+                </div>
+                <DiscountsList items={discounts} /> 
+                <div className={styles.btnWrapper}>
+                    <Btn text='Смотреть все' svgId='pageBtn' />
+                </div>   
+            </section>
         </Container>
     )
 };

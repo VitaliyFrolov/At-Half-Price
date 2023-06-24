@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Header.module.scss"
-// import { SvgTools } from "../../svgTools/SvgTools";
+import { SvgTools } from "svgTools/SvgTools";
 import { Link } from "react-router-dom";
 
 
@@ -13,12 +13,12 @@ export const Header = (props: Props) => {
                 <div className={style.container}>
                     <div className={style.leftWrapper}>
                         <div className={style.logo}>
-                            {/* <SvgTools id="logo" /> */}
+                            <SvgTools id="logo" />
                         </div>
                         <nav>
                             <ul className={style.list}>
                                 <li className={style.item}>
-                                    {/* <SvgTools id="location" /> */}
+                                    <SvgTools id="location" />
                                     <p className={style.text}>
                                         Тель Авив 
                                     </p>

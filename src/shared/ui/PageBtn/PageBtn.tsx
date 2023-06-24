@@ -1,5 +1,5 @@
 import React from "react";
-// import { SvgTools } from "../../svgTools/SvgTools";
+import { SvgTools } from "svgTools/SvgTools";
 import style from './PageBtn.module.scss';
 import { Link } from "react-router-dom";
 
@@ -15,11 +15,11 @@ export const PageBtn = ({text, svgId}: Props) => {
                 <p className={style.text}>
                     {text}
                 </p>
-                {/* {svgId ? 
-                    // <SvgTools
-                    //     id={svgId}
-                    // /> : null
-                } */}
+                {svgId ? 
+                    <SvgTools
+                        id={svgId}
+                    /> : null
+                }
             </Link>
         </div>
     )

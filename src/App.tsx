@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home/ui/Page';
-import { Shops } from './pages/Shops/ui/Shops';
+// import { Shops } from './pages/Shops/ui/Shops';
 import { Banner } from './shared/ui/Banner/Banner';
-// import { Footer } from './shared/Footer/Footer';
-// import { Header } from './shared/Header/Header';
+import { Header } from 'shared/ui/Header/Header';
+import { Footer } from 'shared/ui/Footer/Footer';
 import styles from './App.module.scss';
 
 
 
 
 function App() {
-  const [searchValue, setSearchValue] = useState('');
+  // const [searchValue, setSearchValue] = useState('');
 
-  const onChangeSearchInput = (event: any) => {
-    setSearchValue(event.target.value);
-  };
+  // const onChangeSearchInput = (event: any) => {
+  //   setSearchValue(event.target.value);
+  // };
 
   return (
     <div className={styles.appContainer}>
-      {/* <Header /> */}
+      <Header />
       <div className={styles.appContent}>
         <Banner />
         <Routes>
@@ -32,7 +32,7 @@ function App() {
             element={<Shops /> }
           /> */}
         </Routes>
-      {/* <Footer />    */}
+      <Footer />   
       </div>
     </div>
   );

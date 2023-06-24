@@ -17,19 +17,27 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
         storeName
     } = props;
 
-    const discountlessPrice = useMemo(
-        () => price * 100 / (100 - discountPercent),
+    const discountPrice = useMemo(
+        () => price * (1 - discountPercent * 0.01),
         [discountPercent, price]
     );
 
+    const imgOverlay = (
+        <div className={styles.imgOverlay}>
+            <div className={styles.discountMark}>
+                -{discountPercent}%
+            </div>
+        </div>
+    );
+
     return (
-        <Card>
+        <Card imgOverlay={imgOverlay}>
             <div className={styles.priceRow}>
                 <span className={styles.price}>
-                    {price}
-                </span>
-                <span className={styles.discountlessPrice}>
-                    {discountlessPrice}
+                    {discountPrice.toFixed(2)}
+                    <sup className={styles.discountlessPrice}>
+                        {price.toFixed(2)}
+                    </sup>
                 </span>
             </div>
             <h3 className={styles.productName}>

@@ -12,8 +12,8 @@ export const DiscountsList: FC<IDiscountsListProps> = (props) => {
     const discrountsCards = items.map((item) => (
         <DiscountCard
             productName={item.productName}
-            discountPercent={item.discountPercent}
             price={item.price}
+            discountPercent={item.discountPercent}
             storeName={item.storeName}
             imgUrl={item.imgUrl}
             imgAlt={item.productName}

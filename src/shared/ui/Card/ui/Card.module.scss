@@ -6,12 +6,26 @@
   border: 1px solid rgb(171, 170, 170);
 }
 
+.imgWrapper {
+  position: relative;
+}
+
 .img {
   object-fit: cover;
+  display: block;
+  width: 100%;
 }
 
 .content {
   border-top: 1px solid rgb(159, 157, 157);
   background: white;
   padding: 10px;
+}
+
+.imgOverlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

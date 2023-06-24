@@ -1,20 +1,29 @@
 import { FC, PropsWithChildren } from 'react';
 import cn from 'classnames';
-import styles from './ListCard.module.scss';
+import styles from './Card.module.scss';
 
-export interface IListCardProps extends PropsWithChildren {
+export interface ICardProps extends PropsWithChildren {
   className?: string;
+  imgHeight?: number;
   imgUrl?: string;
   imgAlt?: string;
 }
 
-export const ListCard: FC<IListCardProps> = (props) => {
-  const { imgUrl, imgAlt, children, className } = props; 
+export const Card: FC<ICardProps> = (props) => {
+  const {
+    imgUrl,
+    imgAlt,
+    imgHeight = 300,
+    children,
+    className
+  } = props; 
   return (
     <div className={cn([styles.card, className])}>
       <img
+        className={styles.img}
         src={imgUrl}
         alt={imgAlt}
+        height={imgHeight}
       />
       <div className={styles.content}>
         {children}

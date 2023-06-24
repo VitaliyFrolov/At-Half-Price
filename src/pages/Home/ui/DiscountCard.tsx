@@ -1,8 +1,8 @@
 import { FC, useMemo } from 'react';
-import { ListCard, IListCardProps } from 'shared/ui/ListCard';
+import { Card, ICardProps } from 'shared/ui/Card';
 import styles from './DiscountCard.module.scss';
 
-export interface IDiscountCardProps extends IListCardProps {
+export interface IDiscountCardProps extends ICardProps {
     price: number;
     discountPercent: number;
     productName: string;
@@ -23,7 +23,7 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
     );
 
     return (
-        <ListCard>
+        <Card>
             <div className={styles.priceRow}>
                 <span className={styles.price}>
                     {price}
@@ -38,6 +38,6 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
             <p className={styles.storeName}>
                 {storeName}
             </p>
-        </ListCard>
+        </Card>
     );
 };

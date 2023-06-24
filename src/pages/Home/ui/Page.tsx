@@ -6,7 +6,7 @@ import { DiscountsList } from './DiscountsList';
 import { IDiscountCardProps } from './DiscountCard';
 import styles from './Page.module.scss';
 import { Title } from 'shared/ui/Title/Title';
-import { PageBtn } from 'shared/ui/PageBtn/PageBtn';
+import { Btn } from 'shared/ui/Btn/Btn';
 
 export const Home: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -18,17 +18,25 @@ export const Home: FC = () => {
     }, []);
 
     return (
-        <>
-            <div className={styles.listHeader}>
-                <Title text='Магазины со скидками в Тель-Авиве' />
-            </div>
-            <StoresList items={stores} />
-            <PageBtn text='Смотреть все' svgId='pageBtn' />
-            <div className={styles.listHeader}>
-                <Title text='Самые выгодные скидки сейчас' />
-            </div>
-            <DiscountsList items={discounts} />
-            <PageBtn text='Смотреть все' svgId='pageBtn'/>
-        </>
+        <div className={styles.pageContainer}>
+            <section className={styles.stores}>
+                <div className={styles.listHeader}>
+                    <Title text='Магазины со скидками в Тель-Авиве' />
+                </div>
+                <StoresList items={stores} />
+                <div className={styles.btnWrapper}>
+                    <Btn text='Смотреть все' svgId='pageBtn' />
+                </div>
+            </section>
+            <section className={styles.discounts}>
+                <div className={styles.listHeader}>
+                    <Title text='Самые выгодные скидки сейчас' />
+                </div>
+                <DiscountsList items={discounts} />
+                <div className={styles.btnWrapper}>
+                    <Btn text='Смотреть все' svgId='pageBtn'/>
+                </div>
+            </section>
+        </div>
     )
 };

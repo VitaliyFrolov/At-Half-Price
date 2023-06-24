@@ -1,6 +1,6 @@
 import React from "react";
-import { SvgTools } from "svgTools/SvgTools";
-import style from './PageBtn.module.scss';
+import { SvgTools } from "../svgTools/SvgTools";
+import style from './Btn.module.scss';
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
     svgId?: string
 }
 
-export const PageBtn = ({text, svgId}: Props) => {
+export const Btn = ({text, svgId}: Props) => {
     return (
         <div className={style.btn}>
             <Link className={style.linkTo} to={'/shops'}>

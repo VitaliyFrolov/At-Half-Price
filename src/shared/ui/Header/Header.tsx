@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Header.module.scss"
-import { SvgTools } from "svgTools/SvgTools";
+import { SvgTools } from "../svgTools/SvgTools";
 import { Link } from "react-router-dom";
 
 

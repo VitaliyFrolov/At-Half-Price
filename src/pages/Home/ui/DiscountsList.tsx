@@ -1,6 +1,6 @@
 import { FC } from 'react';
+import { List } from 'shared/ui/List';
 import { DiscountCard, IDiscountCardProps } from './DiscountCard';
-import styles from './DiscountsList.module.scss';
 
 export interface IDiscountsListProps {
     items: IDiscountCardProps[];
@@ -10,21 +10,19 @@ export const DiscountsList: FC<IDiscountsListProps> = (props) => {
     const { items } = props;
 
     const discrountsCards = items.map((item) => (
-        <li className={styles.listItem}>
-            <DiscountCard
-                productName={item.productName}
-                discountPercent={item.discountPercent}
-                price={item.price}
-                storeName={item.storeName}
-                imgUrl={item.imgUrl}
-                imgAlt={item.productName}
-            />
-        </li>
+        <DiscountCard
+            productName={item.productName}
+            discountPercent={item.discountPercent}
+            price={item.price}
+            storeName={item.storeName}
+            imgUrl={item.imgUrl}
+            imgAlt={item.productName}
+        />
     ));
 
     return (
-        <ul className={styles.list}>
+        <List>
             {discrountsCards}
-        </ul>
+        </List>
     );
 };

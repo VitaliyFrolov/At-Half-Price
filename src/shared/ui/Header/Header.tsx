@@ -1,43 +1,41 @@
-import React from "react";
-import style from "./Header.module.scss"
-import { SvgTools } from "../svgTools/SvgTools";
 import { Link } from "react-router-dom";
+import styles from "./Header.module.scss"
 
 
 interface Props {}
 
 export const Header = (props: Props) => {
     return (
-        <div className={style.shadow}>
-            <div className={style.wrapper}>
-                <div className={style.container}>
-                    <div className={style.leftWrapper}>
-                        <div className={style.logo}>
-                            <SvgTools id="logo" />
+        <div className={styles.shadow}>
+            <div className={styles.wrapper}>
+                <div className={styles.container}>
+                    <div className={styles.leftWrapper}>
+                        <div className={styles.logo}>
+                            {/* <SvgTools id="logo" /> */}
                         </div>
                         <nav>
-                            <ul className={style.list}>
-                                <li className={style.item}>
-                                    <SvgTools id="location" />
-                                    <p className={style.text}>
+                            <ul className={styles.list}>
+                                <li className={styles.item}>
+                                    {/* <SvgTools id="location" /> */}
+                                    <p className={styles.text}>
                                         Тель Авив 
                                     </p>
                                 </li>
-                                <li className={style.item}>
-                                    <p className={style.text}>
+                                <li className={styles.item}>
+                                    <p className={styles.text}>
                                         Скидки 
                                     </p>
                                 </li>
-                                <li className={style.item}>
-                                    <p className={style.text}>
+                                <li className={styles.item}>
+                                    <p className={styles.text}>
                                         Купоны 
                                     </p>
                                 </li>
-                                <li className={style.item}>
+                                <li className={styles.item}>
                                     <Link 
-                                        className={style.link}
+                                        className={styles.link}
                                         to={'./shops'}>
-                                        <p className={style.text}>
+                                        <p className={styles.text}>
                                             Магазины 
                                         </p>
                                     </Link>
@@ -45,11 +43,11 @@ export const Header = (props: Props) => {
                             </ul>
                         </nav>
                     </div>
-                    <div className={style.rightWrapper}>
-                        <div className={style.input}>
+                    <div className={styles.rightWrapper}>
+                        <div className={styles.input}>
                             input
                         </div>
-                        <div className={style.user} />
+                        <div className={styles.user} />
                     </div>
                 </div>
             </div>

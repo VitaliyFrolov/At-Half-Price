@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home/ui/Page';
+import { HomePage } from 'pages/Home';
 // import { Shops } from './pages/Shops/ui/Shops';
 import { Banner } from './shared/ui/Banner/Banner';
 import { Header } from 'shared/ui/Header/Header';
@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route 
             path='/'
-            element={<Home />}
+            element={<HomePage />}
           /> 
           {/* <Route
             path='/shops'

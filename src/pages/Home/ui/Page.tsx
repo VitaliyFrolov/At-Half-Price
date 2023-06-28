@@ -6,7 +6,7 @@ import { IStoreCardProps } from './StoreCard';
 import { DiscountsList } from './DiscountsList';
 import { IDiscountCardProps } from './DiscountCard';
 import styles from './Page.module.scss';
-import { Title } from 'shared/ui/Title/Title';
+import { Title } from 'shared/ui/Title/ui/Title';
 import { Btn } from 'shared/ui/Btn/Btn';
 
 export const Page: FC = () => {

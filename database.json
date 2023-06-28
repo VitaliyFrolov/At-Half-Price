@@ -4,72 +4,84 @@
       "price": 14,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 15
     },
     {
       "price": 10,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 5
     },
     {
       "price": 30,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 15
     },
     {
       "price": 44,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 15
     },
     {
       "price": 44,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 10
     },
     {
       "price": 24,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 15
     },
     {
       "price": 50,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 15
     },
     {
       "price": 20,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 10
     },
     {
       "price": 33,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 9
     },
     {
       "price": 99,
       "productName": "продукт",
       "storeName": "магазин",
-      "discountPercent": 0
+      "imgUrl": "/img/TestImgCard.jpg",
+      "discountPercent": 5
     },
     {
       "price": 10,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 10
     },
     {
       "price": 10,
       "productName": "продукт",
       "storeName": "магазин",
+      "imgUrl": "/img/TestImgCard.jpg",
       "discountPercent": 10
     }
   ],
@@ -77,48 +89,48 @@
     {
       "discount": 2323,
       "name": "7шагофф",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 1
     },
     {
       "discount": 2312,
       "name": "магазин",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 2
     },
     {
       "discount": 2333,
       "name": "магазин",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 3
     },
     {
       "discount": 2311,
       "name": "верный",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 4
     },
     {
       "discount": 2342,
       "name": "магазин",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 5
     },
     {
       "discount": 2324,
       "name": "магазин",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 6
     }, {
       "discount": 2388,
       "name": "магнит",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 7
     },
     {
       "discount": 2335,
       "name": "пятерочка",
-      "imgUrl": "/img/BannerTestImg.png",
+      "imgUrl": "/img/TestImgCard.jpg",
       "id": 8
     }
   ],

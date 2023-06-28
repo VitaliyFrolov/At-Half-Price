@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom';
 import { Banner } from 'shared/ui/Banner/Banner';
-import { Footer } from 'shared/ui/Footer/Footer';
-import { Header } from 'shared/ui/Header/Header';
+import { Footer } from 'shared/ui/Footer/ui/Footer';
+import { Header } from 'shared/ui/Header/ui/Header';
 import { HomePage } from 'pages/Home';
 import 'app/styles/index.scss';
+import { ShopsPage } from 'pages/Shops';
 
 const AppLayout: FC = () => {
   return (
@@ -27,6 +28,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />
+      }
+    ]
+  },
+  {
+    path: '/shops',
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        element: <ShopsPage />
       }
     ]
   }

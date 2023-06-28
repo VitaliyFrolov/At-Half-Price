@@ -7,24 +7,25 @@ import { Title } from "shared/ui/Title/ui/Title";
 import { StoresList } from "pages/Home/ui/StoresList";
 import { Btn } from "shared/ui/Btn/Btn";
 import { ProductFilter } from "shared/ui/ProductFilter/ProductFilter";
+import axios from "axios";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
-    // const [currentPage, setCurrentPage] = useState(1);
-    
+    const [fetching, setFetching] = useState(true);
 
     useEffect(() => {
         getStores().then((response) => setStores(response as IStoreCardProps[]));
-
-        // document.addEventListener('scroll', scrollHeandler);
-        // return function () {
-        //     document.removeEventListener('scroll', scrollHeandler);
-        // }
     }, []);
 
-    // const scrollHeandler = (e) => {
-    //     console.log('scroll!')
-    // }
+    useEffect(() => {
+        if (fetching) {
+            axios.get(`http://localhost:3005/comments`)
+                .then(response => {
+                    setStores([...stores, ...response.data])
+                })
+                .finally(() => setFetching(false))
+        }
+    }, [fetching, stores])
 
     return (
         <Container>
@@ -37,7 +38,9 @@ export const Page: FC = () => {
                </div>
                 <StoresList items={stores} />
                 <div className={styles.btnWrapper}>
-                    <Btn text='Показать еще' />
+                    <span onClick={() => setFetching(true)}>
+                        <Btn text='Показать еще' />
+                    </span>
                 </div>
             </section>
         </Container>

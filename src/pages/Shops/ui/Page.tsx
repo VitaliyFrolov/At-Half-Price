@@ -7,7 +7,6 @@ import { Title } from "shared/ui/Title/ui/Title";
 import { StoresList } from "pages/Home/ui/StoresList";
 import { Btn } from "shared/ui/Btn/Btn";
 import { ProductFilter } from "shared/ui/ProductFilter/ProductFilter";
-import axios from "axios";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -19,13 +18,11 @@ export const Page: FC = () => {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3005/comments`)
-                .then(response => {
-                    setStores([...stores, ...response.data])
-                })
+            getStores()
+                .then((response) => setStores([...stores, ...response as IStoreCardProps[]]))
                 .finally(() => setFetching(false))
         }
-    }, [fetching, stores])
+    }, [fetching, stores]);
 
     return (
         <Container>
@@ -45,4 +42,4 @@ export const Page: FC = () => {
             </section>
         </Container>
     )
-}
+};

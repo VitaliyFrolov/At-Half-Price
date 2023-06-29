@@ -7,6 +7,7 @@ import { Title } from "shared/ui/Title/ui/Title";
 import { StoresList } from "pages/Home/ui/StoresList";
 import { Btn } from "shared/ui/Btn/Btn";
 import { ProductFilter } from "shared/ui/ProductFilter/ProductFilter";
+import { Search } from "shared/ui/Search";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -29,6 +30,9 @@ export const Page: FC = () => {
             <section>
                 <div className={styles.listHeader}>
                     <Title text='Магазины' />
+                    <div className={styles.searchWrapper}>
+                        <Search button={true} placeholder='Поиск магазинов' />
+                    </div>
                 </div>
                <div className={styles.filterWrapper}>
                     <ProductFilter />

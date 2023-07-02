@@ -1,0 +1,8 @@
+$sizes: (('s', 10px), ('m', 16px), ('l', 20px));
+
+@each $size, $px in $sizes {
+  .size-#{$size} {
+    width: #{$px};
+    height: #{$px};
+  }
+}

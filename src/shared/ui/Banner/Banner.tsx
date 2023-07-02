@@ -1,15 +1,9 @@
-import React from "react";
-import style from './Banner.module.scss';
+import styles from './Banner.module.scss';
 
-interface Props {}
-
-export const Banner = (props: Props) => {
+export const Banner = () => {
     return (
-        <section className={style.bannerWrapper}>
-            <div className={style.banner}>
-                <div className={style.bannerImg} />
-                <p className={style.text}>Рекламный банер</p>
-            </div>
-        </section>
-    )
-}
+        <div className={styles.banner}>
+            banner
+        </div>
+    );
+};

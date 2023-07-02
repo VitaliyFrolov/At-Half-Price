@@ -3,11 +3,15 @@ import { List } from 'shared/ui/List';
 import { DiscountCard, IDiscountCardProps } from './DiscountCard';
 
 export interface IDiscountsListProps {
+    className?: string;
     items: IDiscountCardProps[];
 }
 
 export const DiscountsList: FC<IDiscountsListProps> = (props) => {
-    const { items } = props;
+    const {
+        items,
+        className
+    } = props;
 
     const discrountsCards = items.map((item) => (
         <DiscountCard
@@ -21,7 +25,7 @@ export const DiscountsList: FC<IDiscountsListProps> = (props) => {
     ));
 
     return (
-        <List>
+        <List className={className}>
             {discrountsCards}
         </List>
     );

@@ -1,56 +1,58 @@
+import { FC } from 'react';
+import cn from 'classnames';
 import { Link } from "react-router-dom";
-import styles from "./Header.module.scss"
+import { PagePath } from 'app/lib/routes';
+import { Container } from 'shared/ui/Container';
+import styles from "./Header.module.scss";
 
+interface IHeaderProps {
+    className?: string;
+}
 
-interface Props {}
+export const Header: FC<IHeaderProps> = (props) => {
+    const { className } = props;
 
-export const Header = (props: Props) => {
     return (
-        <div className={styles.shadow}>
-            <div className={styles.wrapper}>
-                <div className={styles.container}>
-                    <div className={styles.leftWrapper}>
-                        <div className={styles.logo}>
-                            {/* <SvgTools id="logo" /> */}
-                        </div>
-                        <nav>
-                            <ul className={styles.list}>
-                                <li className={styles.item}>
-                                    {/* <SvgTools id="location" /> */}
-                                    <p className={styles.text}>
-                                        Тель Авив 
-                                    </p>
-                                </li>
-                                <li className={styles.item}>
-                                    <p className={styles.text}>
-                                        Скидки 
-                                    </p>
-                                </li>
-                                <li className={styles.item}>
-                                    <p className={styles.text}>
-                                        Купоны 
-                                    </p>
-                                </li>
-                                <li className={styles.item}>
-                                    <Link 
-                                        className={styles.link}
-                                        to={'./shops'}>
-                                        <p className={styles.text}>
-                                            Магазины 
-                                        </p>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+        <header className={cn([styles.header, className])}>
+            <Container>
+                <div className={styles.headerContent}>
+                    <img
+                        className={styles.logo}
+                        width={60}
+                        height={60}
+                        src="/images/logo.png"
+                        alt="Logo of product"
+                    />
+                    <div className={styles.location}>
+                        location
                     </div>
-                    <div className={styles.rightWrapper}>
-                        <div className={styles.input}>
-                            input
-                        </div>
-                        <div className={styles.user} />
+                    <nav className={styles.navigation}>
+                        <ul className={styles.navigationList}>
+                            <li className={styles.navigationItem}>
+                                <Link className={styles.navigationLink} to={PagePath.Discounts}>
+                                    Скидки
+                                </Link>
+                            </li>
+                            <li className={styles.navigationItem}>
+                                <Link className={styles.navigationLink} to={PagePath.Coupons}>
+                                    Купоны
+                                </Link>
+                            </li>
+                            <li className={styles.navigationItem}>
+                                <Link className={styles.navigationLink} to={PagePath.Stores}>
+                                    Магазины
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className={styles.search}>
+                        search
+                    </div>
+                    <div className={styles.avatar}>
+                        avatar
                     </div>
                 </div>
-            </div>
-        </div>
+            </Container>
+        </header>
     )
 };

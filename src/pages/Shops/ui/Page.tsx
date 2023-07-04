@@ -27,7 +27,7 @@ export const Page: FC = () => {
 
     return (
         <Container>
-            <section>
+            <section className={styles.section}>
                 <div className={styles.listHeader}>
                     <Title>
                         Магазигы

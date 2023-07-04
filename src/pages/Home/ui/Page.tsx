@@ -1,13 +1,15 @@
 import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from 'shared/ui/Container';
+import { DiscountsList } from './DiscountsList';
+import { Title } from 'shared/ui/Title';
+import { Button } from 'shared/ui/Button';
+import { PagePath } from 'app/lib/routes';
+import { IDiscountCardProps } from './DiscountCard';
+import { IStoreCardProps } from './StoreCard';
 import { StoresList } from './StoresList';
 import { getStores, getDiscounts } from '../lib/dataGetters';
-import { IStoreCardProps } from './StoreCard';
-import { DiscountsList } from './DiscountsList';
-import { IDiscountCardProps } from './DiscountCard';
 import styles from './Page.module.scss';
-import { Title } from 'shared/ui/Title/Title';
-import { Btn } from 'shared/ui/Btn/Btn';
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -19,25 +21,35 @@ export const Page: FC = () => {
     }, []);
 
     return (
-        <Container>
-            <section className={styles.section}>
-                <div className={styles.listHeader}>
-                    <Title text='Магазины со скидками в Тель-Авиве' />
-                </div>
-                <StoresList items={stores} />
-                <div className={styles.btnWrapper}>
-                    <Btn text='Смотреть все' svgId='pageBtn' />
-                </div>
-            </section>
-            <section className={styles.section}>
-                <div className={styles.listHeader}>
-                    <Title text='Самые выгодные скидки сейчас' />
-                </div>
-                <DiscountsList items={discounts} /> 
-                <div className={styles.btnWrapper}>
-                    <Btn text='Смотреть все' svgId='pageBtn' />
-                </div>   
-            </section>
-        </Container>
+        <div className={styles.page}>
+            <Container>
+                <section className={styles.section}>
+                    <Title className={styles.title}>
+                        Магазины со скидками в Тель-Авиве
+                    </Title>
+                    <StoresList className={styles.content} items={stores} />
+                    <div className={styles.sectionFooter}>
+                        <Link to={PagePath.Stores}>
+                            <Button>
+                                Смотреть все
+                            </Button>
+                        </Link>
+                    </div>
+                </section>
+                <section className={styles.section}>
+                    <Title className={styles.title}>
+                        Самые выгодные скидки сейчас
+                    </Title>
+                    <DiscountsList className={styles.content} items={discounts} /> 
+                    <div className={styles.sectionFooter}>
+                        <Link to={PagePath.Stores}>
+                            <Button>
+                                Смотреть все
+                            </Button>
+                        </Link>
+                    </div>
+                </section>
+            </Container>
+        </div>
     )
 };

@@ -3,11 +3,15 @@ import { List } from 'shared/ui/List';
 import { StoreCard, IStoreCardProps } from './StoreCard';
 
 interface IStoresListProps {
+    className?: string;
     items: IStoreCardProps[];
 }
 
 export const StoresList: FC<IStoresListProps> = (props) => {
-    const { items } = props;
+    const {
+        items,
+        className
+    } = props;
 
     const storesCards = useMemo(() => items.map((item) => (
         <StoreCard
@@ -19,7 +23,7 @@ export const StoresList: FC<IStoresListProps> = (props) => {
     )), [items]);
 
     return (
-        <List>
+        <List className={className}>
             {storesCards}
         </List>
     );

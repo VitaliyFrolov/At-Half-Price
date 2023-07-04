@@ -1,5 +1,9 @@
-.listHeader {
-    margin: 0 0 73px 0;
+.page {
+    padding: 60px 0 120px;
+}
+
+.title {
+    margin-bottom: 73px;
 }
 
 .section {
@@ -8,8 +12,11 @@
     }
 }
 
-.btnWrapper {
+.content {
+    margin-bottom: 45px;
+}
+
+.sectionFooter {
     display: flex;
     justify-content: center;
-    margin-top: 42px;
 }

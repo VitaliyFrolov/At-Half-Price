@@ -8,14 +8,16 @@ import 'app/styles/index.scss';
 
 const AppLayout: FC = () => {
   return (
-    <>
-      <Header/>
-      <Banner />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
+    <div className="app">
+      <Header className="app-header" />
+      <div className="app-content">
+        <Banner />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 };
 

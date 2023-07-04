@@ -30,7 +30,7 @@ export const Page: FC = () => {
             <section className={styles.section}>
                 <div className={styles.listHeader}>
                     <Title>
-                        Магазигы
+                        Магазины
                     </Title>
                     <div className={styles.searchWrapper}>
                         <Search button={true} placeholder='Поиск магазинов' />
@@ -42,7 +42,7 @@ export const Page: FC = () => {
                 <StoresList items={stores} />
                 <div className={styles.btnWrapper}>
                     <span onClick={() => setFetching(true)}>
-                        <Button>
+                        <Button className={styles.button}>
                             Смотреть еще
                         </Button>
                     </span>

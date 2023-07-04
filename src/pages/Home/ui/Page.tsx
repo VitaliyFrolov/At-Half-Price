@@ -30,7 +30,7 @@ export const Page: FC = () => {
                     <StoresList className={styles.content} items={stores} />
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
-                            <Button>
+                            <Button className={styles.button}>
                                 Смотреть все
                             </Button>
                         </Link>
@@ -43,7 +43,7 @@ export const Page: FC = () => {
                     <DiscountsList className={styles.content} items={discounts} /> 
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
-                            <Button>
+                            <Button className={styles.button}>
                                 Смотреть все
                             </Button>
                         </Link>

@@ -7,6 +7,7 @@ export interface IDiscountCardProps extends ICardProps {
     discountPercent: number;
     productName: string;
     storeName: string;
+    imgUrl: string;
 }
 
 export const DiscountCard: FC<IDiscountCardProps> = (props) => {
@@ -14,7 +15,8 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
         price,
         discountPercent,
         productName,
-        storeName
+        storeName,
+        imgUrl
     } = props;
 
     const discountPrice = useMemo(
@@ -31,7 +33,7 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
     );
 
     return (
-        <Card imgOverlay={imgOverlay}>
+        <Card imgOverlay={imgOverlay} imgUrl={imgUrl}>
             <div className={styles.priceRow}>
                 <span className={styles.price}>
                     {discountPrice.toFixed(2)}

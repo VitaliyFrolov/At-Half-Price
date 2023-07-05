@@ -32,13 +32,23 @@ export const Page: FC = () => {
                     <Title>
                         Магазины
                     </Title>
-                    <div className={styles.searchWrapper}>
-                        <Search button={true} placeholder='Поиск магазинов' />
-                    </div>
+                    <form className={styles.searchForm}>
+                        <img
+                            src="/images/svg/searchIcon.svg"
+                            alt="search icon"
+                            width={17}
+                            height={17}
+                            className={styles.searchIcon}
+                        />
+                        <Search className={styles.input} placeholder='Поиск магазинов' />
+                        <Button className={styles.inputBtn}>
+                            Найти
+                        </Button>
+                    </form>
                 </div>
-               <div className={styles.filterWrapper}>
+                <div className={styles.filterWrapper}>
                     <ProductFilter />
-               </div>
+                </div>
                 <StoresList items={stores} />
                 <div className={styles.btnWrapper}>
                     <span onClick={() => setFetching(true)}>

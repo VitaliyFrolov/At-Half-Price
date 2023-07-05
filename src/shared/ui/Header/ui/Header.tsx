@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { PagePath } from 'app/lib/routes';
 import { Container } from 'shared/ui/Container';
 import styles from "./Header.module.scss";
+import { Search } from 'shared/ui/Search';
 
 interface IHeaderProps {
     className?: string;
@@ -45,11 +46,27 @@ export const Header: FC<IHeaderProps> = (props) => {
                             </li>
                         </ul>
                     </nav>
-                    <div className={styles.search}>
-                        search
+                    <div className={styles.searchWrapper}>
+                        <img
+                            src="/images/svg/searchIcon.svg"
+                            alt="search icon"
+                            width={17}
+                            height={17}
+                            className={styles.searchIcon}
+                        />
+                        <Search
+                            placeholder='Поиск акций и магазинов'
+                            className={styles.search}
+                        />
                     </div>
                     <div className={styles.avatar}>
-                        avatar
+                        <img 
+                            className={styles.avatar__icn}
+                            width={38}
+                            height={36}
+                            src="/images/avatar.png"
+                            alt="user"
+                        />
                     </div>
                 </div>
             </Container>

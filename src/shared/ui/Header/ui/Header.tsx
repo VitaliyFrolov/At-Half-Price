@@ -25,7 +25,16 @@ export const Header: FC<IHeaderProps> = (props) => {
                         alt="Logo of product"
                     />
                     <div className={styles.location}>
-                        location
+                        <img 
+                            className={styles.locationIcn}
+                            src='/images/svg/locationIcn.svg'
+                            alt='location'
+                            width={9}
+                            height={14}
+                        />
+                        <p className={styles.locationText}>
+                            Тель Авив
+                        </p>
                     </div>
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>

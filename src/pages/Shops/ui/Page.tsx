@@ -5,17 +5,19 @@ import styles from './Page.module.scss';
 import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title/ui/Title";
 import { StoresList } from "pages/Home/ui/StoresList";
-import { ProductFilter } from "shared/ui/ProductFilter/ProductFilter";
+import { FilterButton } from "shared/ui/filterBtn";
 import { Search } from "shared/ui/Search";
 import { Button } from "shared/ui/Button";
+import { dataURL } from "../lib/dataURL";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
     const [fetching, setFetching] = useState(true);
+    const [filter, setFilter] = useState(dataURL.allStores)
 
     useEffect(() => {
-        getStores().then((response) => setStores(response as IStoreCardProps[]));
-    }, []);
+        getStores(filter).then((response) => setStores(response as IStoreCardProps[]))
+    }, [filter]);
 
     useEffect(() => {
         if (fetching) {
@@ -47,7 +49,14 @@ export const Page: FC = () => {
                     </form>
                 </div>
                 <div className={styles.filterWrapper}>
-                    <ProductFilter />
+                    <FilterButton onClick={() => setFilter(dataURL.allStores)} title='Все магазины' />
+                    <FilterButton onClick={() => setFilter(dataURL.supermarketStores)} title='Супермаркеты ' />
+                    <FilterButton title='Магазины Электронники' />
+                    <FilterButton title='Детские магазины' />
+                    <FilterButton title='Косметика' />
+                    <FilterButton title='Алкогольные магазины' />
+                    <FilterButton title='Товары для дома' />
+                    <FilterButton title='Зоотовары' />
                 </div>
                 <StoresList items={stores} />
                 <div className={styles.btnWrapper}>

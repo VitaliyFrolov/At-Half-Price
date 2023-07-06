@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "discounts": [
     {
       "price": 14,
       "productName": "продукт",
@@ -85,7 +85,7 @@
       "discountPercent": 10
     }
   ],
-  "comments": [
+  "stores": [
     {
       "discount": 2323,
       "name": "7шагофф",
@@ -134,7 +134,30 @@
       "id": 8
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "storesSupermarket": [
+    {
+      "discount": 2323,
+      "name": "7шагофф(супермаркет)",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 1
+    },
+    {
+      "discount": 2312,
+      "name": "магазин(супермаркет)",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 2
+    },
+    {
+      "discount": 2333,
+      "name": "магазин(супермаркет)",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 3
+    },
+    {
+      "discount": 2311,
+      "name": "верный(супермаркет)",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 4
+    }
+  ]
 }

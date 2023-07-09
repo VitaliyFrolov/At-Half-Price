@@ -9,7 +9,7 @@ import { FilterButton } from "shared/ui/filterBtn";
 import { Search } from "shared/ui/Search";
 import { Button } from "shared/ui/Button";
 import { dataURL } from "../lib/dataURL";
-import { Checkbox } from "shared/ui/Checkbox";
+import { Select } from "shared/ui/Select";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -35,7 +35,7 @@ export const Page: FC = () => {
                     <Title>
                         Магазины
                     </Title>
-                    <Checkbox text="Товары только со скидкой"/>
+                    {/* <Select /> */}
                     <form className={styles.searchForm}>
                         <img
                             src="/images/svg/searchIcon.svg"

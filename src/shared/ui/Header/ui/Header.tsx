@@ -3,8 +3,10 @@ import cn from 'classnames';
 import { Link } from "react-router-dom";
 import { PagePath } from 'app/lib/routes';
 import { Container } from 'shared/ui/Container';
-import styles from "./Header.module.scss";
 import { Search } from 'shared/ui/Search';
+import { Avatar } from 'shared/ui/Avatar';
+import { LocationSelector } from './LocationSelector';
+import styles from "./Header.module.scss";
 
 interface IHeaderProps {
     className?: string;
@@ -24,18 +26,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                         src="/images/logo.png"
                         alt="Logo of product"
                     />
-                    <div className={styles.location}>
-                        <img 
-                            className={styles.locationIcn}
-                            src='/images/svg/locationIcn.svg'
-                            alt='location'
-                            width={9}
-                            height={14}
-                        />
-                        <p className={styles.locationText}>
-                            Тель Авив
-                        </p>
-                    </div>
+                    <LocationSelector className={styles.location} /> 
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>
                             <li className={styles.navigationItem}>
@@ -68,15 +59,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                             className={styles.search}
                         />
                     </div>
-                    <div className={styles.avatar}>
-                        <img 
-                            className={styles.avatar__icn}
-                            width={38}
-                            height={36}
-                            src="/images/avatar.png"
-                            alt="user"
-                        />
-                    </div>
+                    <Avatar className={styles.avatar} />
                 </div>
             </Container>
         </header>

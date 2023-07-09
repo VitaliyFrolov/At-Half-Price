@@ -41,24 +41,9 @@
     text-decoration: none;
 }
 
-.searchWrapper {
+.searchInput {
     width: 480px;
-    height: 34px;
-    border: 1px solid #D4D4D4;
-    border-radius: 6px;
-    margin-left: 42px;
-    display: flex;
-    align-items: center;
-}
-
-.searchIcon {
-    margin-left: 13px;
-    margin-right: 13px;
-}
-
-.search {
-    border: none;
-    outline: none;
+    margin: 0 30px;
 }
 
 .avatar {

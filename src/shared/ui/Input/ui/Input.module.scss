@@ -1,0 +1,38 @@
+.input {
+  display: flex;
+  align-items: center;
+  transition: .2s ease;
+}
+
+.icon {
+  flex: 0 0 auto;
+}
+
+.iconPosition-left {
+  margin-right: var(--margin-s);
+  order: 0;
+}
+
+.iconPosition-right {
+  margin-left: var(--margin-s);
+  order: 2;
+}
+
+.nativeInput {
+  border: none;
+  height: 100%;
+  order: 1;
+  flex: 1 1 auto;
+}
+
+.theme-outlined {
+  border: 1px solid #959595;
+
+  &.focused {
+    border-color: #3d3b3b;
+  }
+
+  .nativeInput {
+    padding: 7px 10px;
+  }
+}

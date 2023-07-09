@@ -134,30 +134,42 @@
       "id": 8
     }
   ],
-  "storesSupermarket": [
+  "stores_categories": [
     {
-      "discount": 2323,
-      "name": "7шагофф(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 1
+      "caption": "masdasdfsdafasdfsadfasdfasdf ma ma",
+      "id": "ma ma ma"
     },
     {
-      "discount": 2312,
-      "name": "магазин(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 2
+      "caption": "asdfa sfma ma",
+      "id": "ma madfsa ma"
     },
     {
-      "discount": 2333,
-      "name": "магазин(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 3
+      "caption": "aaaamaddsafasdfasdfadsffama ma",
+      "id": "ma dfaddsasdfma ma"
     },
     {
-      "discount": 2311,
-      "name": "верный(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 4
+      "caption": "ma ma madfasdfasfd",
+      "id": "ma ma maasdfasd"
+    },
+    {
+      "caption": "ma d dfasdfma ma",
+      "id": "ma ma mfsdafsdafasdfa"
+    },
+    {
+      "caption": "fdfdadfasma ma ma",
+      "id": "ma ma masdfasdfa"
+    },
+    {
+      "caption": "ma ma maasd",
+      "id": "ma ma mdfasdfa"
+    },
+    {
+      "caption": "ma mama",
+      "id": "ma ma dasma"
+    },
+    {
+      "caption": "madasdmama",
+      "id": "ma madasfasd ma"
     }
   ]
 }

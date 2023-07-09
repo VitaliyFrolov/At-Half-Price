@@ -6,9 +6,7 @@ import { Title } from 'shared/ui/Title';
 import { Button } from 'shared/ui/Button';
 import { PagePath } from 'app/lib/routes';
 import { IDiscountCardProps } from './DiscountCard';
-import { IStoreCardProps } from './StoreCard';
-import { StoresList } from './StoresList';
-import { getStores, getDiscounts } from '../lib/dataGetters';
+import { StoresList, getStores, IStoreCardProps } from 'features/StoresList';
 import styles from './Page.module.scss';
 
 export const Page: FC = () => {
@@ -17,7 +15,7 @@ export const Page: FC = () => {
 
     useEffect(() => {
         getStores().then((response) => setStores(response as IStoreCardProps[]));
-        getDiscounts().then((response) => setDiscounts(response as IDiscountCardProps[]));
+        // getDiscounts().then((response) => setDiscounts(response as IDiscountCardProps[]));
     }, []);
 
     return (

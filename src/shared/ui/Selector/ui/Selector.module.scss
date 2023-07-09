@@ -1,0 +1,30 @@
+.selectorBox {
+  cursor: pointer;
+  user-select: none;
+}
+
+.selectorList {
+  width: 100%;
+}
+
+.selectorItem {
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 5px 10px;
+  user-select: none;
+
+  & + & {
+    border-top: 1px solid black;
+  }
+}
+
+.popup-outlined {
+  box-shadow: 0 5px 5px 0 black;
+  background: white;
+  border: 1px solid black;
+}
+
+.box-outlined {
+  border: 1px solid black;
+  padding: 5px 10px;
+}

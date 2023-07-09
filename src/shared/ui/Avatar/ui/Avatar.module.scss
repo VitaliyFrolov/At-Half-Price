@@ -1,0 +1,11 @@
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+}
+
+.avatarImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

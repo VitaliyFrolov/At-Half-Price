@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { PagePath } from 'app/lib/routes';
 import { Container } from 'shared/ui/Container';
 import styles from "./Header.module.scss";
+import { LocationSelector } from './LocationSelector';
+import { Avatar } from 'shared/ui/Avatar';
 
 interface IHeaderProps {
     className?: string;
@@ -23,9 +25,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                         src="/images/logo.png"
                         alt="Logo of product"
                     />
-                    <div className={styles.location}>
-                        location
-                    </div>
+                    <LocationSelector className={styles.location} /> 
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>
                             <li className={styles.navigationItem}>
@@ -48,9 +48,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                     <div className={styles.search}>
                         search
                     </div>
-                    <div className={styles.avatar}>
-                        avatar
-                    </div>
+                    <Avatar className={styles.avatar} />
                 </div>
             </Container>
         </header>

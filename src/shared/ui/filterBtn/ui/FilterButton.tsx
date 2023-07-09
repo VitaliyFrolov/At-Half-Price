@@ -13,7 +13,9 @@ export const FilterButton:FC<IFilterButtonProps>  = ({title, onClick}) => {
                 className={styles.button}
                 onClick={onClick}
             >
+            <span>
                 {title}
+            </span> 
             </button>
         </div>
     )

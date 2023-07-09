@@ -9,6 +9,7 @@ import { FilterButton } from "shared/ui/filterBtn";
 import { Search } from "shared/ui/Search";
 import { Button } from "shared/ui/Button";
 import { dataURL } from "../lib/dataURL";
+import { Checkbox } from "shared/ui/Checkbox";
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
@@ -21,11 +22,11 @@ export const Page: FC = () => {
 
     useEffect(() => {
         if (fetching) {
-            getStores()
+            getStores(filter)
                 .then((response) => setStores([...stores, ...response as IStoreCardProps[]]))
                 .finally(() => setFetching(false))
         }
-    }, [fetching, stores]);
+    }, [fetching, stores, filter]);
 
     return (
         <Container>
@@ -34,6 +35,7 @@ export const Page: FC = () => {
                     <Title>
                         Магазины
                     </Title>
+                    <Checkbox text="Товары только со скидкой"/>
                     <form className={styles.searchForm}>
                         <img
                             src="/images/svg/searchIcon.svg"

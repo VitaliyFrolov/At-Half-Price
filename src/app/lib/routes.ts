@@ -1,6 +1,6 @@
 export enum PagePath {
   Home = '/',
-  Stores = '/stores',
+  Stores = '/shops',
   Store = '/stores/:id',
   Discounts = '/discounts',
   Coupons = '/coupons'

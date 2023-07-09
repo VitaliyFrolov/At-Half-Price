@@ -3,9 +3,10 @@ import cn from 'classnames';
 import { Link } from "react-router-dom";
 import { PagePath } from 'app/lib/routes';
 import { Container } from 'shared/ui/Container';
-import styles from "./Header.module.scss";
-import { LocationSelector } from './LocationSelector';
+import { Search } from 'shared/ui/Search';
 import { Avatar } from 'shared/ui/Avatar';
+import { LocationSelector } from './LocationSelector';
+import styles from "./Header.module.scss";
 
 interface IHeaderProps {
     className?: string;
@@ -29,7 +30,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>
                             <li className={styles.navigationItem}>
-                                <Link className={styles.navigationLink} to={PagePath.Discounts}>
+                                <Link className={styles.navigationLink} to={PagePath.Home}>
                                     Скидки
                                 </Link>
                             </li>
@@ -45,8 +46,18 @@ export const Header: FC<IHeaderProps> = (props) => {
                             </li>
                         </ul>
                     </nav>
-                    <div className={styles.search}>
-                        search
+                    <div className={styles.searchWrapper}>
+                        <img
+                            src="/images/svg/searchIcon.svg"
+                            alt="search icon"
+                            width={17}
+                            height={17}
+                            className={styles.searchIcon}
+                        />
+                        <Search
+                            placeholder='Поиск акций и магазинов'
+                            className={styles.search}
+                        />
                     </div>
                     <Avatar className={styles.avatar} />
                 </div>

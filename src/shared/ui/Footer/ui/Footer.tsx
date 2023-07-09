@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from 'shared/ui/Container';
-import { Title } from '../Title';
+import { Title } from 'shared/ui/Title';
 import styles from './Footer.module.scss';
 
 export const Footer: FC = () => {

@@ -1,7 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import { IStoreCardProps } from '../../Home/ui/StoreCard';
 import { getStores } from '../../Home/lib/dataGetters'
-import styles from './Page.module.scss';
 import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title/ui/Title";
 import { StoresList } from "pages/Home/ui/StoresList";
@@ -10,6 +9,7 @@ import { Search } from "shared/ui/Search";
 import { Button } from "shared/ui/Button";
 import { dataURL } from "../lib/dataURL";
 import { Checkbox } from "shared/ui/Checkbox";
+import styles from './Page.module.scss';
 
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);

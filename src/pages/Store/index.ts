@@ -1,0 +1,1 @@
+export { Page as StorePage } from './ui/Page'

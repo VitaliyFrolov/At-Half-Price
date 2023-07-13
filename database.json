@@ -64,23 +64,49 @@
       "discountPercent": 9
     },
     {
-      "price": 99,
-      "productName": "продукт",
-      "storeName": "магазин",
+      "price": 10,
+      "productName": "Чипсы lays сметана и лук",
+      "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
-      "discountPercent": 5
+      "discountPercent": 10,
+      "link": "http://localhost:3000/stores/magnit"
     },
     {
       "price": 10,
-      "productName": "продукт",
-      "storeName": "магазин",
+      "productName": "Айран",
+      "storeName": "Магнит",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "discountPercent": 10,
+      "link": "http://localhost:3000/stores/magnit"
+    },
+    {
+      "price": 10,
+      "productName": "Селедка под шубой",
+      "storeName": "Магнит",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "discountPercent": 10,
+      "link": "http://localhost:3000/stores/magnit"
+    }
+  ],
+  "magnit": [
+    {
+      "price": 10,
+      "productName": "Чипсы lays сметана и лук",
+      "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
       "discountPercent": 10
     },
     {
       "price": 10,
-      "productName": "продукт",
-      "storeName": "магазин",
+      "productName": "Айран",
+      "storeName": "Магнит",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "discountPercent": 10
+    },
+    {
+      "price": 10,
+      "productName": "Селедка под шубой",
+      "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
       "discountPercent": 10
     }

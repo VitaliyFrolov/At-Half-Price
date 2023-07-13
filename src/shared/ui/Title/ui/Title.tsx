@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import cn from 'classnames';
 import styles from './Title.module.scss';
 
 export interface ITitleProps {
     className?: string;
-    children: string;
+    children: string | ReactElement;
     size?: 'm' | 'l' | 's';
     tag?: 'h1' | 'h2' | 'h3' | 'h4';
 };

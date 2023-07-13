@@ -21,7 +21,6 @@ export const DiscountsList: FC<IDiscountsListProps> = (props) => {
             storeName={item.storeName}
             imgUrl={item.imgUrl}
             imgAlt={item.productName}
-            link={item.link}
         />
     ));
 

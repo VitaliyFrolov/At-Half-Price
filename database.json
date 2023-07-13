@@ -68,24 +68,21 @@
       "productName": "Чипсы lays сметана и лук",
       "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
-      "discountPercent": 10,
-      "link": "http://localhost:3000/stores/magnit"
+      "discountPercent": 10
     },
     {
       "price": 10,
       "productName": "Айран",
       "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
-      "discountPercent": 10,
-      "link": "http://localhost:3000/stores/magnit"
+      "discountPercent": 10
     },
     {
       "price": 10,
       "productName": "Селедка под шубой",
       "storeName": "Магнит",
       "imgUrl": "/images/TestImgCard.jpg",
-      "discountPercent": 10,
-      "link": "http://localhost:3000/stores/magnit"
+      "discountPercent": 10
     }
   ],
   "magnit": [
@@ -151,6 +148,7 @@
       "discount": 2388,
       "name": "магнит",
       "imgUrl": "/images/TestImgCard.jpg",
+      "link": "http://localhost:3000/stores/magnit",
       "id": 7
     },
     {

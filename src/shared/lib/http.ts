@@ -1,10 +1,17 @@
-import axios from 'axios';
+import axios, { AxiosPromise } from 'axios';
 
-export const http = {
-  get<T>(url: string): Promise<T> {
-    return axios.get(url).then((response) => response.data);
-  },
-  post<T, R>(url: string, data: T): Promise<R> {
-    return axios.post(url, data).then((response) => response.data)
+export class HTTP {
+  static get<T>(url: string): Promise<T> {
+    return HTTP._handleRequest(axios.get(url));
+  }
+
+  static post<T, R>(url: string, data: T): Promise<R> {
+    return HTTP._handleRequest(axios.post(url, data));
+  }
+
+  private static _handleRequest(request: AxiosPromise) {
+    return request
+      .then((response) => response.data)
+      .catch((error) => error)
   }
 };

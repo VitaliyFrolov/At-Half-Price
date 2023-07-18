@@ -7,6 +7,7 @@ import { HomePage } from 'pages/Home';
 import { StoresPage } from 'pages/Stores';
 import { StorePage } from 'pages/Store';
 import 'app/styles/index.scss';
+import { ProductPage } from 'pages/Product';
 
 
 const AppLayout: FC = () => {
@@ -38,8 +39,12 @@ const router = createBrowserRouter([
         element: <StoresPage />,
       },
       {
-        path: '/stores/:id',
+        path: '/stores/:store',
         element: <StorePage />
+      },
+      {
+        path: '/stores/:store/products/:product',
+        element: <ProductPage />
       }
     ]
   }

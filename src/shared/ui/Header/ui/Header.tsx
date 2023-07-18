@@ -35,7 +35,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                                 </Link>
                             </li>
                             <li className={styles.navigationItem}>
-                                <Link className={styles.navigationLink} to={PagePath.Store}>
+                                <Link className={styles.navigationLink} to={PagePath.Home}>
                                     Купоны
                                 </Link>
                             </li>

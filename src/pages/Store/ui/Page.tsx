@@ -8,31 +8,67 @@ import { Title } from "shared/ui/Title";
 import styles from './Page.module.scss';
 import { DiscountsList } from "pages/Home/ui/DiscountsList";
 import { Button } from "shared/ui/Button";
+import { FilterButton } from "shared/ui/filterBtn";
+import { Search } from "shared/ui/Search";
+import { dataURL } from "pages/Stores/lib/dataURL";
 
 export const Page: FC = () => {
-    const {id} = useParams();
+    const {store} = useParams();
     const [discounts, setDiscounts] = useState<IDiscountCardProps[]>([]);
+    const [fetching, setFetching] = useState(true);
+    const [filter, setFilter] = useState(`http://localhost:3005/${store}`)
     
     useEffect(() => {
-        http.get(`http://localhost:3005/${id}`).then((response) => setDiscounts (response as IDiscountCardProps[]))
-    }, [id]);
+        http.get(filter).then((response) => setDiscounts (response as IDiscountCardProps[]))
+    }, [filter]);
+
+    useEffect(() => {
+        if (fetching) {
+            http.get(filter)
+                .then((response) => setDiscounts([...discounts, ...response as IDiscountCardProps[]]))
+                .finally(() => setFetching(false))
+        }
+    }, [filter, discounts, fetching])
 
     return (
         <Container>
             <section className={styles.section}>
                 <Title>
                     <span>
-                        Скидки в магазине {id}
+                        Скидки в магазине {store}
                     </span>
                 </Title>
                 <div className={styles.sectionHeader}>
-                    <Checkbox
-                        text="Товары только со скидкой"
-                    />
+                    <form className={styles.searchForm}>
+                        <img
+                            src="/images/svg/searchIcon.svg"
+                            alt="search icon"
+                            width={17}
+                            height={17}
+                            className={styles.searchIcon}
+                        />
+                        <Search className={styles.input} placeholder='Поиск магазинов' />
+                        <Button className={styles.inputBtn}>
+                            Найти
+                        </Button>
+                    </form>
+                </div>
+                <Checkbox
+                    text="Товары только со скидкой"
+                />
+                <div className={styles.filterWrapper}>
+                    <FilterButton onClick={() => setFilter(dataURL.allDiscounts)} title='Все магазины' />
+                    <FilterButton title='Супермаркеты ' />
+                    <FilterButton title='Магазины Электронники' />
+                    <FilterButton title='Детские магазины' />
+                    <FilterButton title='Косметика' />
+                    <FilterButton title='Алкогольные магазины' />
+                    <FilterButton title='Товары для дома' />
+                    <FilterButton title='Зоотовары' />
                 </div>
                 <DiscountsList items={discounts} />
                 <div className={styles.sectionFooter}>
-                    <Button>
+                    <Button onClick={() => setFetching(true)}>
                         Показать еще
                     </Button>
                 </div>

@@ -2,11 +2,11 @@ import { FC } from 'react'
 import styles from './Checkbox.module.scss'
 
 interface ICheckboxProps {
-    text?: string,
+    label?: string,
     onClick?: () => void
 }
 
-export const Checkbox: FC<ICheckboxProps> = ({ text, onClick }) => {
+export const Checkbox: FC<ICheckboxProps> = ({ label, onClick }) => {
     return (
         <label className={styles.label}>
             <input
@@ -18,7 +18,7 @@ export const Checkbox: FC<ICheckboxProps> = ({ text, onClick }) => {
                 className={styles.fakeCheckbox}
             />
             <span>
-                {text}
+                {label}
             </span>
         </label>
     )

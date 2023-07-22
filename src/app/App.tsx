@@ -4,8 +4,12 @@ import { Banner } from 'shared/ui/Banner/Banner';
 import { Footer } from 'shared/ui/Footer';
 import { Header } from 'shared/ui/Header';
 import { HomePage } from 'pages/Home';
+import { StoresPage } from 'pages/Stores';
+import { StorePage } from 'pages/Store';
 import 'app/styles/index.scss';
-import { ShopsPage } from 'pages/Shops';
+import { ProductPage } from 'pages/Product';
+import { PagePath } from './lib/routes';
+
 
 const AppLayout: FC = () => {
   return (
@@ -32,8 +36,16 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: '/shops',
-        element: <ShopsPage />
+        path: PagePath.Stores,
+        element: <StoresPage />,
+      },
+      {
+        path: PagePath.Store,
+        element: <StorePage />
+      },
+      {
+        path: PagePath.Product,
+        element: <ProductPage />
       }
     ]
   }

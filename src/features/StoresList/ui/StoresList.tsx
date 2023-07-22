@@ -19,6 +19,7 @@ export const StoresList: FC<IStoresListProps> = (props) => {
             name={item.name}
             discountsCount={item.discountsCount}
             imgUrl={item.imgUrl}
+            url={item.url}
         />
     )), [items]);
 

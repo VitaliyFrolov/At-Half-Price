@@ -16,7 +16,7 @@ export const DiscountCard: FC<IDiscountCardProps> = (props) => {
         discountPercent,
         productName,
         storeName,
-        imgUrl
+        imgUrl,
     } = props;
 
     const discountPrice = useMemo(

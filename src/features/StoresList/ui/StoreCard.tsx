@@ -6,14 +6,14 @@ import styles from './StoreCard.module.scss';
 export interface IStoreCardProps extends ICardProps {
     discountsCount: number;
     name: string;
-    link?: string;
+    url?: string;
 }
 
 export const StoreCard: FC<IStoreCardProps> = (props) => {
-    const { discountsCount, name, imgUrl, link, className } = props
+    const { discountsCount, name, imgUrl, url, className } = props
 
     return (
-        <Link to={`${link}`} className={styles.link}>
+        <Link to={`${url}`} className={styles.link}>
             <Card imgUrl={imgUrl} imgAlt={name} className={className}>
                 <h3 className={styles.discountsCount}>
                     {discountsCount} Акций

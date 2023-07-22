@@ -148,7 +148,7 @@
       "discount": 2388,
       "name": "магнит",
       "imgUrl": "/images/TestImgCard.jpg",
-      "link": "http://localhost:3000/stores/magnit",
+      "url": "http://localhost:3000/stores/magnit",
       "id": 7
     },
     {
@@ -158,30 +158,38 @@
       "id": 8
     }
   ],
-  "storesSupermarket": [
+  "stores_categories": [
     {
-      "discount": 2323,
-      "name": "7шагофф(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 1
+      "caption": "Все магазины",
+      "id": "Все магазины"
     },
     {
-      "discount": 2312,
-      "name": "магазин(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 2
+      "caption": "Супермаркет",
+      "id": "Супермаркет"
     },
     {
-      "discount": 2333,
-      "name": "магазин(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 3
+      "caption": "Магазины Электронники",
+      "id": "Магазины Электронники"
     },
     {
-      "discount": 2311,
-      "name": "верный(супермаркет)",
-      "imgUrl": "/images/TestImgCard.jpg",
-      "id": 4
+      "caption": "Детские магазины",
+      "id": "Детские магазины"
+    },
+    {
+      "caption": "Косметика",
+      "id": "Косметика"
+    },
+    {
+      "caption": "Алкогольные Магазины",
+      "id": "Алкогольные Магазины"
+    },
+    {
+      "caption": "Товары для дома",
+      "id": "Товары для дома"
+    },
+    {
+      "caption": "Зоотовары",
+      "id": "Зоотовары"
     }
   ]
 }

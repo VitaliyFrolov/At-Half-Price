@@ -10,10 +10,16 @@ export interface IStoreCardProps extends ICardProps {
 }
 
 export const StoreCard: FC<IStoreCardProps> = (props) => {
-    const { discountsCount, name, imgUrl, url, className } = props
+    const {
+        discountsCount,
+        name,
+        imgUrl,
+        url = '',
+        className
+    } = props
 
     return (
-        <Link to={`${url}`} className={styles.link}>
+        <Link to={url} className={styles.link}>
             <Card imgUrl={imgUrl} imgAlt={name} className={className}>
                 <h3 className={styles.discountsCount}>
                     {discountsCount} Акций

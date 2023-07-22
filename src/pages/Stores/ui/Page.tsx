@@ -8,7 +8,6 @@ import { getRegistryData } from '../lib/dataGetters';
 export const Page: FC = () => {
     const [stores, setStores] = useState<IStoreCardProps[]>([]);
     const [categories, setCategories] = useState([]);
-    const [filter, setFilter] = useState()
 
     useLayoutEffect(() => {
         getRegistryData().then((response) => {
@@ -17,7 +16,7 @@ export const Page: FC = () => {
             //@ts-ignore clear it
             setCategories(response.categories);
         })
-    }, [filter]);
+    }, []);
 
     return (
         <div className={styles.page}>

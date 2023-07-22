@@ -4,12 +4,12 @@ import { Container } from 'shared/ui/Container';
 import styles from './Page.module.scss';
 
 export const Page: FC = () => {
-    const { store, product } = useParams();
+    const { storeId, productId } = useParams();
 
     return (
         <Container>
             <h2>
-                Товар { product } из магазина { store }
+                Товар { productId } из магазина { storeId }
             </h2>
         </Container>
     )

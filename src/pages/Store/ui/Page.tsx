@@ -7,31 +7,24 @@ import { Title } from "shared/ui/Title";
 import styles from './Page.module.scss';
 import { DiscountsList } from "pages/Home/ui/DiscountsList";
 import { Button } from "shared/ui/Button";
-import { HTTP } from "shared/lib/http";
 import { CategoryFilter } from "features/StoresList";
+import { HTTP } from "shared/lib/http";
 import { getRegistryData } from "pages/Stores/lib/dataGetters";
 
 export const Page: FC = () => {
     const {storeId} = useParams();
     const [discounts, setDiscounts] = useState<IDiscountCardProps[]>([]);
-    const [fetching, setFetching] = useState(true);
-    const [filter, setFilter] = useState(`http://localhost:3005/${storeId}`)
     const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-        if (fetching) {
-            HTTP.get(filter)
-                .then((response) => setDiscounts([...discounts, ...response as IDiscountCardProps[]]))
-                .finally(() => setFetching(false))
-        }
-    }, [filter, discounts, fetching])
-
     useLayoutEffect(() => {
+        HTTP.get(`http://localhost:3005/${storeId}`)
+            .then((response) => setDiscounts(response as IDiscountCardProps[]))
+            
         getRegistryData().then((response) => {
             //@ts-ignore clear it
             setCategories(response.categories);
         })
-    }, [filter]);
+    }, [storeId]);
 
     return (
         <Container>
@@ -52,7 +45,7 @@ export const Page: FC = () => {
                />
                 <DiscountsList items={discounts} />
                 <div className={styles.sectionFooter}>
-                    <Button onClick={() => setFetching(true)}>
+                    <Button>
                         Показать еще
                     </Button>
                 </div>

@@ -156,6 +156,102 @@
       "name": "пятерочка",
       "imgUrl": "/images/TestImgCard.jpg",
       "id": 8
+    },
+    {
+      "discount": 2323,
+      "name": "7шагофф",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 9
+    },
+    {
+      "discount": 2312,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 10
+    },
+    {
+      "discount": 2333,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 11
+    },
+    {
+      "discount": 2311,
+      "name": "верный",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 12
+    },
+    {
+      "discount": 2342,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 13
+    },
+    {
+      "discount": 2324,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 14
+    }, {
+      "discount": 2388,
+      "name": "магнит",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "url": "http://localhost:3000/stores/magnit",
+      "id": 15
+    },
+    {
+      "discount": 2335,
+      "name": "пятерочка",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 16
+    },
+    {
+      "discount": 2323,
+      "name": "7шагофф",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 17
+    },
+    {
+      "discount": 2312,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 18
+    },
+    {
+      "discount": 2333,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 19
+    },
+    {
+      "discount": 2311,
+      "name": "верный",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 20
+    },
+    {
+      "discount": 2342,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 21
+    },
+    {
+      "discount": 2324,
+      "name": "магазин",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 22
+    }, {
+      "discount": 2388,
+      "name": "магнит",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "url": "http://localhost:3000/stores/magnit",
+      "id": 23
+    },
+    {
+      "discount": 2335,
+      "name": "пятерочка",
+      "imgUrl": "/images/TestImgCard.jpg",
+      "id": 24
     }
   ],
   "stores_categories": [

@@ -15,7 +15,7 @@ export const Page: FC = () => {
     const [discounts, setDiscounts] = useState<IDiscountCardProps[]>([]);
 
     useEffect(() => {
-        getStores().then((response) => setStores(response as IStoreCardProps[]));
+        // getStores().then((response) => setStores(response));
         getDiscounts().then((response) => setDiscounts(response as IDiscountCardProps[]));
     }, []);
 
@@ -26,7 +26,7 @@ export const Page: FC = () => {
                     <Title className={styles.title}>
                         Магазины со скидками в Тель-Авиве
                     </Title>
-                    <StoresList className={styles.content} items={stores} />
+                    {/* <StoresList className={styles.content} items={stores} /> */}
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
                             <Button>

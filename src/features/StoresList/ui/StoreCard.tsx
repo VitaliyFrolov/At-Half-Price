@@ -6,7 +6,7 @@ import styles from './StoreCard.module.scss';
 export interface IStoreCardProps extends ICardProps {
     discountsCount: number;
     name: string;
-    url?: string;
+    url: string;
 }
 
 export const StoreCard: FC<IStoreCardProps> = (props) => {

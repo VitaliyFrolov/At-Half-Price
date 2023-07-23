@@ -1,31 +1,35 @@
 import { FC, useMemo } from 'react';
-import { List } from 'shared/ui/List';
-import { StoreCard, IStoreCardProps } from './StoreCard';
+import { List, IListProps } from 'shared/ui/List';
+import { StoreCard } from './StoreCard';
+import { PagePath } from 'app/lib/routes';
+import StoreModel from '../lib/StoreModel';
 
-interface IStoresListProps {
-    className?: string;
-    items: IStoreCardProps[];
-}
+interface IStoresListProps extends IListProps<StoreModel> {}
 
 export const StoresList: FC<IStoresListProps> = (props) => {
     const {
-        items,
-        className
+        data,
+        className,
+        hasMore,
+        isLoading,
+        onScrollEnd
     } = props;
 
-    const storesCards = useMemo(() => items.map((item) => (
-        <StoreCard
-            key={item.name}
-            name={item.name}
-            discountsCount={item.discountsCount}
-            imgUrl={item.imgUrl}
-            url={item.url}
-        />
-    )), [items]);
-
     return (
-        <List className={className}>
-            {storesCards}
-        </List>
+        <List
+            className={className}
+            data={data}
+            hasMore={hasMore}
+            isLoading={isLoading}
+            onScrollEnd={onScrollEnd}
+            itemContentRender={(data) => (
+                <StoreCard
+                    name={data.name}
+                    discountsCount={data.discountsCount}
+                    imgUrl={data.imgUrl}
+                    url={`${PagePath.Stores}/${data.id}`}
+                />
+            )}
+        />
     );
 };

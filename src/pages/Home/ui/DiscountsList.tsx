@@ -25,8 +25,9 @@ export const DiscountsList: FC<IDiscountsListProps> = (props) => {
     ));
 
     return (
-        <List className={className}>
-            {discrountsCards}
-        </List>
+        // <List className={className}>
+        //     {discrountsCards}
+        // </List>
+        <ul></ul>
     );
 };

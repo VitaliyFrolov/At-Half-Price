@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import cn from 'classnames';
 import styles from './CategoryFilter.module.scss';
 
@@ -10,19 +10,30 @@ interface IFilterItem {
 interface ICategoryFilterProps {
   className?: string;
   onChange: (filterId: string) => void;
-  items: IFilterItem[];
+  items?: IFilterItem[];
+  value?: IFilterItem['id'];
 }
 
 export const CategoryFilter: FC<ICategoryFilterProps> = (props) => {
   const {
     className,
     onChange,
-    items
+    items,
+    value
   } = props;
+  const [active, setActive] = useState(value);
 
-  const filterItems = items.map((item) => (
+  const onChangeWrapper = useCallback((id: IFilterItem['id']) => {
+    setActive(id);
+    onChange(id);
+  }, [onChange]);
+
+  const filterItems = items?.map((item) => (
     <li className={styles.categoryItem} key={item.id}>
-      <button className={styles.categoryButton} onClick={() => onChange(item.id)}>
+      <button
+        className={cn([styles.categoryButton], { [styles.active]: active === item.id })}
+        onClick={() => onChangeWrapper(item.id)}
+      >
         <span
           className={cn([styles.categoryName, 'truncate'])}
           title={item.caption}

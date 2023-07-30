@@ -12,6 +12,5 @@ export class HTTP {
   private static _handleRequest(request: AxiosPromise) {
     return request
       .then((response) => response.data)
-      .catch((error) => error)
   }
 };

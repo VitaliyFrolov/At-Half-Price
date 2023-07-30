@@ -6,13 +6,19 @@ interface IItemId {
   id: number | string;
 }
 
-export interface IListProps<D> {
+/**
+ * For extention props child components
+ */
+export interface IListPropsExtension<D> {
   className?: string;
   isLoading?: boolean;
   hasMore?: boolean;
-  data: D[];
-  itemContentRender: (data: D) => ReactNode;
+  data?: D[];
   onScrollEnd?: () => void;
+}
+
+interface IListProps<D> extends IListPropsExtension<D> {
+  itemContentRender: (data: D) => ReactNode;
 }
 
 export const List = <D extends IItemId>(props: IListProps<D>) => {

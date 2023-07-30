@@ -1,25 +1,22 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { PagePath } from 'app/lib/routes';
+import { StoresList, useStores } from 'features/StoresList';
+import { DiscountsList, useDiscounts } from 'features/DiscountsList';
 import { Container } from 'shared/ui/Container';
-import { DiscountsList } from './DiscountsList';
 import { Title } from 'shared/ui/Title';
 import { Button } from 'shared/ui/Button';
-import { PagePath } from 'app/lib/routes';
-import { IDiscountCardProps } from './DiscountCard';
-import { IStoreCardProps, StoresList, useStores } from 'features/StoresList';
-import { getDiscounts } from '../lib/dataGetters';
 import styles from './Page.module.scss';
 
 export const Page: FC = () => {
     const { 
         data: stores,
-        status
+        status: storesStatus
     } = useStores({ limit: 8 });
-    const [discounts, setDiscounts] = useState<IDiscountCardProps[]>([]);
-
-    useEffect(() => {
-        getDiscounts().then((response) => setDiscounts(response as IDiscountCardProps[]));
-    }, []);
+    const {
+        data: discounts,
+        status: discountsStatus
+    } = useDiscounts({ limit: 12 });
 
     return (
         <div className={styles.page}>
@@ -45,7 +42,11 @@ export const Page: FC = () => {
                     <Title className={styles.title}>
                         Самые выгодные скидки сейчас
                     </Title>
-                    <DiscountsList className={styles.content} items={discounts} /> 
+                    <DiscountsList
+                        className={styles.content}
+                        data={discounts}
+                        hasMore={false}
+                    /> 
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
                             <Button>

@@ -1,4 +1,4 @@
-import { FC, useState, useLayoutEffect } from "react";
+import { FC, useState, useLayoutEffect, useMemo } from "react";
 import { StoresList, CategoryFilter, useStores } from 'features/StoresList';
 import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title/ui/Title";
@@ -8,30 +8,25 @@ import { FetchStatus, useFetch } from 'shared/hooks/useFetch';
 import { HTTP } from 'shared/lib/http';
 import { usePagedFetch } from 'shared/hooks/usePagedFetch';
 
+interface IStoreCategory {
+    name: string;
+    id: string;
+}
+
 export const Page: FC = () => {
-    // const {
-    //     isLoading,
-    //     stores,
-    //     error,
-    //     getNextStoresPage,
-    //     hasMore
-    // } = useStores();
+    
     const { 
-        data,
+        data: stores,
         hasMore,
         status,
         getNextPage
     } = useStores();
-    const [categories, setCategories] = useState([]);
+    const { 
+        data: storeCategories,
+        status: categoriesStatus
+    } = useFetch<IStoreCategory[]>('http://localhost:3005/stores-categories');
 
-    useLayoutEffect(() => {
-        // getRegistryData().then((response) => {
-        //     //@ts-ignore clear it
-        //     setCategories(response.categories);
-        // })
-    }, []);
-
-    console.log('render')
+    const categories = useMemo(() => storeCategories?.map((category) => ({ caption: category.name , id: category.id })), [storeCategories]);
 
     return (
         <div className={styles.page}>
@@ -40,21 +35,18 @@ export const Page: FC = () => {
                     <Title className={styles.sectionTitle}>
                         Магазины
                     </Title>
-                    {/* <CategoryFilter
+                    <CategoryFilter
                         className={styles.categoryFilter}
                         items={categories}
                         onChange={() => null}
-                    /> */}
-                    {/* @ts-ignore */}
-                    {data && (
-                        <StoresList
-                            className={styles.storesList}
-                            data={data}
-                            isLoading={status === FetchStatus.Loading}
-                            hasMore={hasMore}
-                            onScrollEnd={getNextPage}
-                        />
-                    )}
+                    />
+                    <StoresList
+                        className={styles.storesList}
+                        data={stores}
+                        isLoading={status === FetchStatus.Loading}
+                        hasMore={hasMore}
+                        onScrollEnd={getNextPage}
+                    />
                 </section>
             </Container>
         </div>

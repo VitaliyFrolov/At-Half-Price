@@ -10,7 +10,7 @@ interface IFilterItem {
 interface ICategoryFilterProps {
   className?: string;
   onChange: (filterId: string) => void;
-  items: IFilterItem[];
+  items?: IFilterItem[];
 }
 
 export const CategoryFilter: FC<ICategoryFilterProps> = (props) => {
@@ -20,7 +20,7 @@ export const CategoryFilter: FC<ICategoryFilterProps> = (props) => {
     items
   } = props;
 
-  const filterItems = items.map((item) => (
+  const filterItems = items?.map((item) => (
     <li className={styles.categoryItem} key={item.id}>
       <button className={styles.categoryButton} onClick={() => onChange(item.id)}>
         <span

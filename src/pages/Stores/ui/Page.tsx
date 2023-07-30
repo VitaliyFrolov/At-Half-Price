@@ -1,12 +1,9 @@
-import { FC, useState, useLayoutEffect, useMemo } from "react";
+import { FC, useState, useMemo } from "react";
 import { StoresList, CategoryFilter, useStores } from 'features/StoresList';
 import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title/ui/Title";
 import styles from './Page.module.scss';
-import { getRegistryData } from '../lib/dataGetters';
 import { FetchStatus, useFetch } from 'shared/hooks/useFetch';
-import { HTTP } from 'shared/lib/http';
-import { usePagedFetch } from 'shared/hooks/usePagedFetch';
 
 interface IStoreCategory {
     name: string;
@@ -14,13 +11,13 @@ interface IStoreCategory {
 }
 
 export const Page: FC = () => {
-    
+    const [category, setCategory] = useState<string>();
     const { 
         data: stores,
         hasMore,
         status,
         getNextPage
-    } = useStores();
+    } = useStores({ category });
     const { 
         data: storeCategories,
         status: categoriesStatus
@@ -38,7 +35,7 @@ export const Page: FC = () => {
                     <CategoryFilter
                         className={styles.categoryFilter}
                         items={categories}
-                        onChange={() => null}
+                        onChange={(id) => setCategory(id)}
                     />
                     <StoresList
                         className={styles.storesList}

@@ -4,14 +4,23 @@ import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title/ui/Title";
 import styles from './Page.module.scss';
 import { getRegistryData } from '../lib/dataGetters';
+import { FetchStatus, useFetch } from 'shared/hooks/useFetch';
+import { HTTP } from 'shared/lib/http';
+import { usePagedFetch } from 'shared/hooks/usePagedFetch';
 
 export const Page: FC = () => {
-    const {
-        isLoading,
-        stores,
-        error,
-        getNextStoresPage,
-        hasMore
+    // const {
+    //     isLoading,
+    //     stores,
+    //     error,
+    //     getNextStoresPage,
+    //     hasMore
+    // } = useStores();
+    const { 
+        data,
+        hasMore,
+        status,
+        getNextPage
     } = useStores();
     const [categories, setCategories] = useState([]);
 
@@ -21,6 +30,8 @@ export const Page: FC = () => {
         //     setCategories(response.categories);
         // })
     }, []);
+
+    console.log('render')
 
     return (
         <div className={styles.page}>
@@ -35,13 +46,15 @@ export const Page: FC = () => {
                         onChange={() => null}
                     /> */}
                     {/* @ts-ignore */}
-                    <StoresList
-                        className={styles.storesList}
-                        data={stores}
-                        isLoading={isLoading}
-                        hasMore={hasMore}
-                        onScrollEnd={getNextStoresPage}
-                    />
+                    {data && (
+                        <StoresList
+                            className={styles.storesList}
+                            data={data}
+                            isLoading={status === FetchStatus.Loading}
+                            hasMore={hasMore}
+                            onScrollEnd={getNextPage}
+                        />
+                    )}
                 </section>
             </Container>
         </div>

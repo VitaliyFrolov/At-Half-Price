@@ -1,54 +1,25 @@
-import { useCallback, useEffect, useState } from 'react';
-import { getStores } from './dataGetters';
+import { IPagedFetchOptions, IUsePagedFetchResult, usePagedFetch } from 'shared/hooks/usePagedFetch';
 import StoreModel from './StoreModel';
+import { IStoreData } from '../types/Data';
+import { useMemo } from 'react';
 
-interface IUseStoresResult {
-  isLoading: boolean;
-  stores: StoreModel[];
-  hasMore: boolean;
-  getNextStoresPage: () => void;
-  error?: Error;
-}
+/**
+ * Hook for fetching collection of stores
+ * @param options options of fetching
+ * @returns stores models
+ */
+const useStores = (options?: IPagedFetchOptions): IUsePagedFetchResult<StoreModel> => {
+  const state = usePagedFetch<IStoreData>(
+    (context) => `http://localhost:3005/stores?page=${context.page}&limit=${context.limit}`,
+    options
+  );
 
-const useStores = (page: number = 1): IUseStoresResult => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [stores, setStores] = useState<StoreModel[]>([]);
-  const [error, setError] = useState();
-  const [hasMore, setHasMore] = useState(false);
-  const [currentPage, setCurrentPage] = useState(page);
-
-  useEffect(() => {
-    setIsLoading(true);
-    const controller = new AbortController();
-    getStores(currentPage, { signal: controller.signal })
-      .then((result) => {
-        if (controller.signal.aborted) {
-          return;
-        }
-        setHasMore(!!result.length);
-        setStores((prev) => [
-          ...prev,
-          ...result.map((data) => new StoreModel(data))
-        ]);
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
-    return () => controller.abort();
-  }, [currentPage])
-
-  const getNextStoresPage = useCallback(() => setCurrentPage((prev) => prev + 1), [])
+  const data = useMemo(() => state.data?.map((store) => new StoreModel(store)), [state.data]);
 
   return {
-    isLoading,
-    stores,
-    error,
-    hasMore,
-    getNextStoresPage
+    ...state,
+    data
   };
-} 
+};
 
 export default useStores;

@@ -6,16 +6,18 @@ import { Title } from 'shared/ui/Title';
 import { Button } from 'shared/ui/Button';
 import { PagePath } from 'app/lib/routes';
 import { IDiscountCardProps } from './DiscountCard';
-import { StoresList, getStores, IStoreCardProps } from 'features/StoresList';
+import { IStoreCardProps, StoresList, useStores } from 'features/StoresList';
 import { getDiscounts } from '../lib/dataGetters';
 import styles from './Page.module.scss';
 
 export const Page: FC = () => {
-    const [stores, setStores] = useState<IStoreCardProps[]>([]);
+    const { 
+        data: stores,
+        status
+    } = useStores({ limit: 8 });
     const [discounts, setDiscounts] = useState<IDiscountCardProps[]>([]);
 
     useEffect(() => {
-        // getStores().then((response) => setStores(response));
         getDiscounts().then((response) => setDiscounts(response as IDiscountCardProps[]));
     }, []);
 
@@ -26,7 +28,11 @@ export const Page: FC = () => {
                     <Title className={styles.title}>
                         Магазины со скидками в Тель-Авиве
                     </Title>
-                    {/* <StoresList className={styles.content} items={stores} /> */}
+                    <StoresList
+                        className={styles.content}
+                        data={stores}
+                        hasMore={false}
+                    />
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
                             <Button>

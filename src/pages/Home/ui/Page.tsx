@@ -6,7 +6,11 @@ import { DiscountsList, useDiscounts } from 'features/DiscountsList';
 import { Container } from 'shared/ui/Container';
 import { Title } from 'shared/ui/Title';
 import { Button } from 'shared/ui/Button';
+import { useT } from 'features/I18next/hooks/useT';
+import { useRTL } from 'features/I18next/hooks/useRTL';
+import cn from 'classnames';
 import styles from './Page.module.scss';
+
 
 export const Page: FC = () => {
     const { 
@@ -18,12 +22,14 @@ export const Page: FC = () => {
         status: discountsStatus
     } = useDiscounts({ limit: 12 });
 
+    const t = useT(['homePage']);
+
     return (
         <div className={styles.page}>
             <Container>
                 <section className={styles.section}>
-                    <Title className={styles.title}>
-                        Магазины со скидками в Тель-Авиве
+                    <Title className={cn([styles.title, useRTL('rtlText')])}>
+                        {t('titles.stores')}
                     </Title>
                     <StoresList
                         className={styles.content}
@@ -33,14 +39,14 @@ export const Page: FC = () => {
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
                             <Button>
-                                Смотреть все
+                                {t('btns.viewAll')}
                             </Button>
                         </Link>
                     </div>
                 </section>
                 <section className={styles.section}>
-                    <Title className={styles.title}>
-                        Самые выгодные скидки сейчас
+                    <Title className={cn([styles.title, useRTL('rtlText')])}>
+                        {t('titles.discount')}
                     </Title>
                     <DiscountsList
                         className={styles.content}
@@ -50,7 +56,7 @@ export const Page: FC = () => {
                     <div className={styles.sectionFooter}>
                         <Link to={PagePath.Stores}>
                             <Button>
-                                Смотреть все
+                                {t('btns.viewAll')}
                             </Button>
                         </Link>
                     </div>

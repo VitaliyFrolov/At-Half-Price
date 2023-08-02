@@ -1,0 +1,9 @@
+{
+    "nav": {
+        "discountBtn": "Discount",
+        "couponsBtn": "Coupons",
+        "storesBtn": "Stores"
+    },
+
+    "placeholder": "Search for stocks and stores"
+}

@@ -6,10 +6,11 @@ import { Container } from "shared/ui/Container";
 import { Title } from "shared/ui/Title";
 import styles from './Page.module.scss';
 // import { DiscountsList } from "pages/Home/ui/DiscountsList";
-import { Button } from "shared/ui/Button";
 import { CategoryFilter } from "features/StoresList";
 import { HTTP } from "shared/lib/http";
 import { getRegistryData } from "pages/Stores/lib/dataGetters";
+import { useT } from "features/I18next/hooks/useT";
+import { useRTL } from "features/I18next/hooks/useRTL";
 
 export const Page: FC = () => {
     const {storeId} = useParams();
@@ -26,11 +27,13 @@ export const Page: FC = () => {
     //     })
     // }, [storeId]);
 
+    const t = useT(['storePage'])
+
     return (
         <Container>
             <section className={styles.section}>
-                <Title>
-                    {`Скидки в магазине ${storeId}`}
+                <Title className={useRTL('rtlText')}>
+                    {`${t('title')} ${storeId}`}
                 </Title>
                 <div className={styles.sectionHeader}>
                     
@@ -45,9 +48,6 @@ export const Page: FC = () => {
                />
                 <DiscountsList items={discounts} /> */}
                 <div className={styles.sectionFooter}>
-                    <Button>
-                        Показать еще
-                    </Button>
                 </div>
             </section>
         </Container>

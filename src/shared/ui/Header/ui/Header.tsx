@@ -6,6 +6,9 @@ import { Container } from 'shared/ui/Container';
 import { SearchInput } from 'shared/ui/SearchInput';
 import { Avatar } from 'shared/ui/Avatar';
 import { LocationSelector } from './LocationSelector';
+import { useT } from 'features/I18next/hooks/useT';
+import { useRTL } from 'features/I18next/hooks/useRTL';
+
 import styles from "./Header.module.scss";
 
 interface IHeaderProps {
@@ -14,46 +17,47 @@ interface IHeaderProps {
 
 export const Header: FC<IHeaderProps> = (props) => {
     const { className } = props;
+    const t = useT(['header']);
 
     return (
         <header className={cn([styles.header, className])}>
             <Container>
-                <div className={styles.headerContent}>
+                <div className={cn([styles.headerContent, useRTL('rtlText')])}>
                     <Link to={PagePath.Home}>
                         <img
-                            className={styles.logo}
+                            className={cn([styles.logo, useRTL('rtlLogo')])}
                             width={60}
                             height={60}
                             src="/images/logo.png"
                             alt="Logo of product"
                         />
                     </Link>
-                    <LocationSelector className={styles.location} /> 
+                    <LocationSelector className={cn([styles.location, useRTL('rtlSelector')])} /> 
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PagePath.Home}>
-                                    Скидки
+                                    {t('nav.discountBtn')}
                                 </Link>
                             </li>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PagePath.Home}>
-                                    Купоны
+                                    {t('nav.couponsBtn')}
                                 </Link>
                             </li>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PagePath.Stores}>
-                                    Магазины
+                                    {t('nav.storesBtn')}
                                 </Link>
                             </li>
                         </ul>
                     </nav>
                     <SearchInput
                         className={styles.searchInput}
-                        placeholder="Поиск акций и магазинов"
+                        placeholder={t('placeholder')}
                         onChange={() => null}
                     />
-                    <Avatar className={styles.avatar} />
+                    <Avatar className={cn([styles.avatar, useRTL('rtlAvatar')])} />
                 </div>
             </Container>
         </header>

@@ -1,0 +1,9 @@
+{
+    "nav": {
+        "discountBtn": "Скидки",
+        "couponsBtn": "Купоны",
+        "storesBtn": "Магазины"
+    },
+
+    "placeholder": "Поиск акций и магазинов"
+}

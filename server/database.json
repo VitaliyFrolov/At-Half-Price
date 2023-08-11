@@ -240,7 +240,8 @@
       "name": "магазин",
       "imgUrl": "/images/TestImgCard.jpg",
       "id": 22
-    }, {
+    },
+    {
       "discount": 2388,
       "name": "магнит",
       "imgUrl": "/images/TestImgCard.jpg",

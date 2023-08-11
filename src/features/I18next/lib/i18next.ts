@@ -9,9 +9,10 @@ i18next
     .use(initReactI18next)
     .init({
         backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
+            // loadPath: '/locales/{{lng}}/{{ns}}.json', // getting locales from the frontend
+            loadPath: 'http://localhost:3005/locales-{{lng}}-{{ns}}', //getting locales from the server
         },
-        fallbackLng: 'en',
+        fallbackLng: 'he',
         debug: false,
         interpolation: {
             espaceValue: false,

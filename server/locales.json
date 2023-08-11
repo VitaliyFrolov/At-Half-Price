@@ -1,0 +1,125 @@
+{
+    "en": {
+        "footer": {
+            "support": {
+                "support": "Support",
+                "instructions": "Instructions and tips",
+                "write": "Write to support"
+            },
+        
+            "partnership": {
+                "partnership": "Partnership",
+                "contact": "Contact us"
+            },
+        
+            "media": "We are in social networks"
+        },
+        "header": {
+            "nav": {
+                "discountBtn": "Discount",
+                "couponsBtn": "Coupons",
+                "storesBtn": "Stores"
+            },
+        
+            "placeholder": "Search for stocks and stores"
+        },
+        "homePage": {
+            "titles": {
+                "stores": "Discount Stores in Tel Aviv",
+                "discount": "The most favorable discounts now"
+            },
+            
+            "btns": {
+                "viewAll": "view all"
+            }
+        },
+        "storePage": {
+            "title": "Discounts in the store"
+        },
+        "storesPage": {
+            "title": "Stores"
+        }
+    },
+    "he": {
+        "footer": {
+            "support": {
+                "support": "תמיכה",
+                "instructions": "הוראות וטיפים",
+                "write": "כתוב לתמיכה"
+            },
+        
+            "partnership": {
+                "partnership": "שותפות",
+                "contact": "צור קשר"
+            },
+        
+            "media": "אנחנו ברשתות חברתיות"
+        },
+        "header": {
+            "nav": {
+                "discountBtn": "הנחה",
+                "couponsBtn": "קופונים",
+                "storesBtn": "חנויות"
+            },
+        
+            "placeholder": "חפש מניות וחנויות"
+        },
+        "homePage": {
+            "titles": {
+                "stores": "חנויות מוזלות בתל אביב",
+                "discount": "הנחות נוחים ביותר עכשיו"
+            },
+        
+            "btns": {
+                "viewAll": "צפו בהכל"
+            }
+        },
+        "storePage": {
+            "title": "הנחות בחנות"
+        },
+        "storesPage": {
+            "title": "חנויות"
+        }
+    },
+    "ru": {
+        "footer": {
+            "support": {
+                "support": "Помощь",
+                "instructions": "Инструкции и советы",
+                "write": "Написать в поддержку"
+            },
+        
+            "partnership": {
+                "partnership": "Партнерство",
+                "contact": "Свяжаться с нами"
+            },
+        
+            "media": "Мы в соцсетях"
+        },
+        "header": {
+            "nav": {
+                "discountBtn": "Скидки",
+                "couponsBtn": "Купоны",
+                "storesBtn": "Магазины"
+            },
+        
+            "placeholder": "Поиск акций и магазинов"
+        },
+        "homePage": {
+            "titles": {
+                "stores": "Магазины со скидками в Тель-Авиве",
+                "discount": "Самые выгодные скидки сейчас"
+            },
+        
+            "btns": {
+                "viewAll": "Смотреть все"
+            }
+        },
+        "storePage": {
+            "title": "Скидки в магазине"
+        },
+        "storesPage": {
+            "title": "Магазины"
+        }
+    }
+}

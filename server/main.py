@@ -1,19 +1,13 @@
 import psycopg
 from aiohttp import web
 import aiohttp_cors
-
-class DictRowFactory:
-    def __init__(self, cursor):
-        self.fields = [c.name for c in cursor.description]
-
-    def __call__(self, values):
-        return dict(zip(self.fields, values))
+import os
 
 
 # todo: change private data usage to ENV
-connection = psycopg.connect('dbname=izrael user=user password=password123 host=localhost port=5432', row_factory=DictRowFactory)
+connection = psycopg.connect(f'dbname={os.getenv("DB_NAME")} user={os.getenv("DB_USER")} password={os.getenv("DB_PASSWORD")} host={os.getenv("DB_HOST")} port={os.getenv("DB_PORT")}', row_factory=psycopg.rows.dict_row)
 connection_cursor = connection.cursor()
-routes = web.RouteTableDef();
+routes = web.RouteTableDef()
 
 
 @routes.get('/stores')

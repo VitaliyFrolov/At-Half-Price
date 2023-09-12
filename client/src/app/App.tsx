@@ -8,12 +8,17 @@ import { MainPage } from 'pages/Main';
 import { StoresPage } from 'pages/Stores';
 import { StorePage } from 'pages/Store';
 import { ProductPage } from 'pages/Product';
+import { useLanguage } from 'shared/i18n/hooks/useLanguage';
+import cn from 'classnames';
 import 'app/styles/index.scss';
 
-
 const AppLayout: FC = () => {
+  const language = useLanguage();
+  
   return (
-    <div className="app">
+    <div className={
+      language === 'he' ? cn(['app', 'rtl']) : 'app'
+    }>
       <Header className="app-header" />
       <div className="app-content">
         <Banner />

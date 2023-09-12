@@ -1,0 +1,11 @@
+{
+    "nav": {
+        "discountBtn": "הנחה",
+        "couponsBtn": "קופונים",
+        "storesBtn": "חנויות"
+    },
+
+    "search": {
+        "placeholder": "חיפוש גלובלי"
+    }
+}

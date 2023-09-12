@@ -6,6 +6,8 @@ import { Container } from 'shared/ui/Container';
 import { SearchInput, SearchModal } from 'features/GlobalSearch';
 import { Avatar } from 'shared/ui/Avatar';
 import { LocationSelector } from './LocationSelector';
+import { useT } from 'shared/i18n/hooks/useT';
+import { useLanguage } from 'shared/i18n/hooks/useLanguage';
 import styles from "./Header.module.scss";
 
 interface IHeaderProps {
@@ -15,6 +17,8 @@ interface IHeaderProps {
 export const Header: FC<IHeaderProps> = (props) => {
     const { className } = props;
     const [modalVisible, setModalVisible] = useState(false);
+    const t = useT(['header']);
+    const language = useLanguage();
 
     return (
         <header className={cn([styles.header, className])}>
@@ -22,29 +26,29 @@ export const Header: FC<IHeaderProps> = (props) => {
                 <div className={styles.headerContent}>
                     <Link to={PageURL.Main}>
                         <img
-                            className={styles.logo}
+                            className={language === 'he' ? styles.logoRtl : styles.logo}
                             width={60}
                             height={60}
                             src="/images/logo.png"
                             alt="Logo of product"
                         />
                     </Link>
-                    <LocationSelector className={styles.location} /> 
+                    <LocationSelector className={language === 'he' ? styles.locationRtl : styles.location} /> 
                     <nav className={styles.navigation}>
                         <ul className={styles.navigationList}>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PageURL.Main}>
-                                    Скидки
+                                    {t('nav.discountBtn')}
                                 </Link>
                             </li>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PageURL.Main}>
-                                    Купоны
+                                    {t('nav.couponsBtn')}
                                 </Link>
                             </li>
                             <li className={styles.navigationItem}>
                                 <Link className={styles.navigationLink} to={PageURL.Stores}>
-                                    Магазины
+                                    {t('nav.storesBtn')}
                                 </Link>
                             </li>
                         </ul>
@@ -55,7 +59,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                         onClick={() => setModalVisible(true)}
                     />
                     <SearchModal visible={modalVisible} />  
-                    <Avatar className={styles.avatar} />
+                    <Avatar className={language === 'he' ? styles.avatarRtl : styles.avatar} />
                 </div>
             </Container>
         </header>

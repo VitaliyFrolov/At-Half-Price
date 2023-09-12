@@ -1,0 +1,11 @@
+{
+    "nav": {
+        "discountBtn": "Скидки",
+        "couponsBtn": "Купоны",
+        "storesBtn": "Магазины"
+    },
+
+    "search": {
+        "placeholder": "Глобальный поиск"
+    }
+}

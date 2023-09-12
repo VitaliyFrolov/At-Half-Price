@@ -8,6 +8,7 @@ import { ProductsList } from 'entities/product/ui/List';
 import { Container } from 'shared/ui/Container';
 import { Title } from 'shared/ui/Title';
 import { Button } from 'shared/ui/Button';
+import { useT } from 'shared/i18n/hooks/useT';
 import styles from './Page.module.scss';
 
 export const Page: FC = () => {
@@ -20,12 +21,14 @@ export const Page: FC = () => {
         status: discountsStatus
     } = useProducts();
 
+    const t = useT(['mainPage']);
+
     return (
         <div className={styles.page}>
             <Container>
                 <section className={styles.section}>
                     <Title className={styles.title}>
-                        Магазины со скидками в Тель-Авиве
+                        {t('titleStores')}
                     </Title>
                     <StoresList
                         className={styles.content}
@@ -35,14 +38,14 @@ export const Page: FC = () => {
                     <div className={styles.sectionFooter}>
                         <Link to={PageURL.Stores}>
                             <Button>
-                                Смотреть все
+                                {t('btn')}
                             </Button>
                         </Link>
                     </div>
                 </section>
                 <section className={styles.section}>
                     <Title className={styles.title}>
-                        Самые выгодные скидки сейчас
+                        {t('titleDiscount')}
                     </Title>
                     <ProductsList
                         className={styles.content}
@@ -52,7 +55,7 @@ export const Page: FC = () => {
                     <div className={styles.sectionFooter}>
                         <Link to={PageURL.Stores}>
                             <Button>
-                                Смотреть все
+                                {t('btn')}
                             </Button>
                         </Link>
                     </div>

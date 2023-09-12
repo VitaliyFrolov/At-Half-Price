@@ -1,5 +1,6 @@
 import { IconID } from 'shared/ui/Icon';
 import { Input, IInputProps, InputTheme } from 'shared/ui/Input';
+import { useT } from 'shared/i18n/hooks/useT';
 
 interface ISearchInputProps {
   className?: IInputProps['className']
@@ -18,10 +19,12 @@ export const SearchInput = (props: ISearchInputProps) => {
     focus
   } = props;
 
+  const t = useT(['header'])
+
   return (
    <Input
     className={className}
-    placeholder="Глобальный поиск"
+    placeholder={t('search.placeholder')}
     iconId={IconID.Search}
     onClick={onClick}
     onChange={onChange}

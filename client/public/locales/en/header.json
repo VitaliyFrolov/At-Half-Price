@@ -1,0 +1,11 @@
+{
+   "nav": {
+        "discountBtn": "Discount",
+        "couponsBtn": "Coupons",
+        "storesBtn": "Stores"
+   },
+
+   "search": {
+        "placeholder": "Global search"
+   }
+}

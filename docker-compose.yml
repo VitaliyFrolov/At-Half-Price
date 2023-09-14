@@ -2,6 +2,7 @@ version: "3.9"
 services:
   db:
     image: postgres:15-alpine
+    restart: "always"
     container_name: "Database"
     environment:
       - "POSTGRES_DB=${DB_NAME}"
@@ -10,25 +11,29 @@ services:
     volumes:
       - "./db:/docker-entrypoint-initdb.d"
     ports:
-      - "5432:5432"
+      - "${DB_PORT}:5432"
   server:
     image: python:3.11-alpine
+    restart: "always"
     container_name: "Server"
     env_file:
       - ".env"
     volumes:
-      - "./server:/App"
-    command: sh -c "cd /App && pip3 install pipenv && pipenv install && pipenv run python main.py"
+      - "./server:/app"
+    command: sh -c "cd /app && pip3 install pipenv && pipenv install && pipenv run python main.py"
     ports:
-      - "5050:5050"
+      - "${SERVER_PORT}:5050"
     depends_on:
       - db
   client:
-    image: node:18-alpine
+    build: "./client"
+    restart: "always"
     container_name: "Client"
     volumes:
-      - "./client:/home/node/app"
+      - "./client:/app"
+      - "/app/node_modules"
     ports:
-      - "3000:3000"
-    command: sh -c "cd /home/node/app && npm install && npm start"
+      - "${CLIENT_PORT}:3000"
+    depends_on:
+      - server
   

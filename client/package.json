@@ -1,30 +1,19 @@
 {
-  "name": "israel-react-app",
+  "name": "israel-discounts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/node": "^16.18.34",
-    "@types/react": "^18.2.8",
-    "@types/react-dom": "^18.2.4",
-    "@types/react-router": "^5.1.20",
-    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
-    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.2",
-    "react-scripts": "5.0.1",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.3.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "react-router-dom": "^6.11.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npx react-scripts start",
+    "build": "npx react-scripts build",
+    "test": "npx react-scripts test",
+    "eject": "npx react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -45,8 +34,18 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^16.18.34",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
-    "ts-jest": "^29.1.1"
+    "ts-jest": "^29.1.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "react-scripts": "^5.0.1"
   }
 }

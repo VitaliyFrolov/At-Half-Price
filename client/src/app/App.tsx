@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { RouterProvider, createBrowserRouter, Outlet } from 'react-router-dom';
+import { FC, PropsWithChildren, useEffect } from 'react';
+import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import { PageURL } from 'shared/lib/routes';
 import { Header } from 'shared/ui/Header';
 import { Banner } from 'shared/ui/Banner';
@@ -10,19 +10,28 @@ import { StorePage } from 'pages/Store';
 import { ProductPage } from 'pages/Product';
 import 'app/styles/index.scss';
 
+const TopScroller: FC<PropsWithChildren> = (props) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return <>{props.children}</>
+};
 
 const AppLayout: FC = () => {
   return (
-    <div className="app">
-      <Header className="app-header" />
-      <div className="app-content">
-        <Banner />
+    <TopScroller>
+      <div className="app">
+        <Header className="app-header" />
+        <Banner className="app-banner" />
         <main>
           <Outlet />
         </main>
         <Footer />
       </div>
-    </div>
+    </TopScroller>
   );
 };
 

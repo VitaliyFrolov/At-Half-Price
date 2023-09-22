@@ -11,9 +11,16 @@
 }
 
 .img {
-  object-fit: cover;
   display: block;
   width: 100%;
+}
+
+.img-contain {
+  object-fit: contain;
+}
+
+.img-cover {
+  object-fit: cover;
 }
 
 .content {

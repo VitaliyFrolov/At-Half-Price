@@ -25,7 +25,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                             className={styles.logo}
                             width={60}
                             height={60}
-                            src="/images/logo.png"
+                            src="/media/logo_placeholder.png"
                             alt="Logo of product"
                         />
                     </Link>

@@ -1,9 +1,20 @@
+import { FC } from 'react';
+import cn from 'classnames';
 import styles from './Banner.module.scss';
 
-export const Banner = () => {
+interface IBannerProps {
+    className?: string;
+}
+
+export const Banner: FC<IBannerProps> = (props) => {
+    const { className } = props;
     return (
-        <div className={styles.banner}>
-            <img className={styles.bannerPicture} src="/images/banner.jpeg" alt="This is a whole from these places" />
+        <div className={cn([styles.banner, className])}>
+            <img
+                className={styles.bannerPicture}
+                src="/media/banner_placeholder.png"
+                alt="Banner placeholder"
+            />
         </div>
     );
 };

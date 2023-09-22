@@ -1,5 +1,6 @@
 export interface IStoreData {
   name: string;
-  id: number;
-  discounts_quantity: number;
+  pk: number;
+  discounts_count: number;
+  picture_name: number;
 }

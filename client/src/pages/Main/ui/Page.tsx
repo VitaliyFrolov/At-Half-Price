@@ -18,7 +18,7 @@ export const Page: FC = () => {
     const {
         data: discounts,
         status: discountsStatus
-    } = useProducts();
+    } = useProducts({ limit: 8 });
 
     return (
         <div className={styles.page}>

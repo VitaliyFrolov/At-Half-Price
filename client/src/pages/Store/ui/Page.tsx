@@ -8,30 +8,30 @@ import { ProductsList } from 'entities/product/ui/List';
 import { sortSelectorItems } from '../lib/const';
 import styles from './Page.module.scss';
 
-
-
 export const Page: FC = () => {
-    const { storeId } = useParams();
-    const { data, changeFilter, filter } = useProducts();
+    const { storeID } = useParams();
+    const { data, changeFilter, filter } = useProducts({ filter: { storeID }});
 
     return (
-        <Container>
-            <section className={styles.section}>
-                <Title>
-                    {`Скидки в магазине ${storeId}`}
-                </Title>
-                <div className={styles.sectionHeader}>
-                    <div className={styles.selector}>
-                        <span>Сортировать:</span>
-                        <Selector
-                            items={sortSelectorItems}
-                            value={filter?.sort}
-                            onSelectedChange={(id) => changeFilter({ sort: id as ProductsSortType})}
-                        />
+        <div className={styles.page}>
+            <Container>
+                <section className={styles.section}>
+                    <Title>
+                        {`Скидки в магазине ${storeID}`}
+                    </Title>
+                    <div className={styles.sectionHeader}>
+                        <div className={styles.selector}>
+                            <span>Сортировать:</span>
+                            <Selector
+                                items={sortSelectorItems}
+                                value={filter?.sort}
+                                onSelectedChange={(id) => changeFilter({ sort: id as ProductsSortType })}
+                            />
+                        </div>
                     </div>
-                </div>
-                <ProductsList data={data} />
-            </section>
-        </Container>
-    )
-}
+                    <ProductsList data={data} />
+                </section>
+            </Container>
+        </div>
+    );
+};

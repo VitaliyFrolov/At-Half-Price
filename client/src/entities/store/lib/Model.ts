@@ -7,9 +7,9 @@ export default class StoreModel {
   id: number;
 
   constructor(data: IStoreData) {
-    this.discountsCount = data.discounts_quantity;
-    this.imgUrl = `/assets/stores/${data.id}.png`;
-    this.id = data.id
+    this.discountsCount = data.discounts_count;
+    this.imgUrl = `/media/stores/${data.picture_name}`;
+    this.id = data.pk
     this.name = data.name;
   }
 }

@@ -25,15 +25,15 @@ services:
       - "${SERVER_PORT}:5050"
     depends_on:
       - db
-  client:
-    build: "./client"
-    restart: "always"
-    container_name: "Client"
-    volumes:
-      - "./client:/app"
-      - "/app/node_modules"
-    ports:
-      - "${CLIENT_PORT}:3000"
-    depends_on:
-      - server
+  # client:
+  #   build: "./client"
+  #   restart: "always"
+  #   container_name: "Client"
+  #   volumes:
+  #     - "./client:/app"
+  #     - "/app/node_modules"
+  #   ports:
+  #     - "${CLIENT_PORT}:3000"
+  #   depends_on:
+  #     - server
   

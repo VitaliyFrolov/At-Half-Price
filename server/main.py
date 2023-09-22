@@ -12,7 +12,31 @@ routes = web.RouteTableDef()
 
 @routes.get('/stores')
 async def stores_handler(request: web.Request):
-  connection_cursor.execute('SELECT * FROM stores')
+  connection_cursor.execute('''
+    SELECT COUNT(1) AS discounts_count, S.name, S.pk, S.picture_name
+    FROM products
+    LEFT JOIN stores S ON products.pk = S.pk
+    GROUP BY S.name, S.pk, S.picture_name;
+  ''')
+  response = connection_cursor.fetchall()
+  result = {
+    'data': response
+  }
+  return web.json_response(result)
+
+@routes.get('/products')
+async def products_handler(request: web.Request):
+  store_ID = request.query.get('storeID')
+  if store_ID is not None:
+    connection_cursor.execute(f'''
+      SELECT pk, name, price, discount_percent, picture_name
+      FROM products WHERE store_pk = {store_ID}
+    ''')
+  else:
+    connection_cursor.execute('''
+      SELECT P.pk, P.name, price, S.name as store_name, discount_percent, S.pk as store_pk, P.picture_name
+      FROM stores S JOIN products P ON P.store_pk = S.pk
+    ''')
   response = connection_cursor.fetchall()
   result = {
     'data': response

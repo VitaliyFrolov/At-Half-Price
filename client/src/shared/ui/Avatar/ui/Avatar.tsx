@@ -31,7 +31,7 @@ export const Avatar: FC<IAvatarProps> = (props) => {
     >
       <img
         className={styles.avatarImg}
-        src={`/avatars/${userId}.png`}
+        src={`/media/avatars/${userId}.png`}
         alt="Avatar of user"
         width={avatarSizes[size]}
         height={avatarSizes[size]}

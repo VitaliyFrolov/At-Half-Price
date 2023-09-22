@@ -8,6 +8,7 @@ export interface ICardProps extends PropsWithChildren {
   imgUrl?: string;
   imgAlt?: string;
   imgOverlay?: ReactNode;
+  objectFit?: 'contain' | 'cover';
 }
 
 export const Card: FC<ICardProps> = (props) => {
@@ -16,6 +17,7 @@ export const Card: FC<ICardProps> = (props) => {
     imgAlt,
     imgHeight = 300,
     imgOverlay,
+    objectFit = 'cover',
     children,
     className
   } = props; 
@@ -23,7 +25,7 @@ export const Card: FC<ICardProps> = (props) => {
     <div className={cn([styles.card, className])}>
       <div className={styles.imgWrapper}>
         <img
-            className={styles.img}
+            className={cn([styles.img, styles[`img-${objectFit}`]])}
             src={imgUrl}
             alt={imgAlt}
             height={imgHeight}
